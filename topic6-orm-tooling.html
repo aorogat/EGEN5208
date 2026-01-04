@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 6: ORM, Tooling, and Productivity - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .student-assignment {
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-assignment:last-of-type {
+            border-bottom: none;
+        }
+
+        .student-label {
+            color: #555;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rubric-table th {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .rubric-table td:first-child {
+            width: 30%;
+        }
+
+        .rubric-table td:nth-child(2) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .references-list {
+            margin: 6px 0 6px 0;
+            font-size: 0.9em;
+        }
+
+        .references-list li {
+            margin: 4px 0;
+            list-style: none;
+        }
+
+        .references-list a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Topic 6: ORM, Tooling, and Developer Productivity</h1>
+        <div class="subtitle">ORMs, Schema Migrations, CI/CD, and Database Testing</div>
+    </header>
+
+    <section>
+        <h2>Topic Overview</h2>
+        <p>
+            Object-relational mapping (ORM) frameworks abstract SQL behind object-oriented APIs, improving
+            developer productivity but introducing performance risks when abstraction leaks. The object-relational
+            impedance mismatch creates fundamental challenges: objects have identity, inheritance, and references,
+            while relational tables use foreign keys and normalization. ORMs generate SQL automatically, which
+            can produce inefficient queries (e.g., N+1 problems) that developers must detect and optimize.
+            Schema migrations require careful management to avoid downtime and data loss in production. Database
+            testing strategies must balance isolation (test containers) with realism (real database behavior).
+            Students must evaluate when ORMs improve productivity versus when they introduce unacceptable
+            performance costs, and understand how to manage schema evolution and testing in production systems.
+        </p>
+    </section>
+
+    <section>
+        <h2>Student Presentation Assignments</h2>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 1:</span>ORMs – Power and Pitfalls</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain what ORMs solve, specifying abstraction benefits and quantifying developer productivity improvements where possible, analyzing ORMs as abstractions with inherent costs, not convenience tools</li>
+                <li>Must compare at least two ORMs (Hibernate, Django ORM, or SQLAlchemy), analyzing architecture differences and abstraction trade-offs, not merely listing framework features</li>
+                <li>Must explain object-relational impedance mismatch, specifying fundamental challenges (identity, inheritance, references) with examples</li>
+                <li>Must justify when ORMs help productivity, identifying scenarios (rapid development, type safety) with concrete benefits</li>
+                <li>Must analyze when ORMs hurt performance, specifying query generation problems and lazy loading issues with examples, including analysis of generated SQL, not just object model code</li>
+                <li>Must evaluate trade-offs: convenience vs control, abstraction vs optimization, specifying when each is preferable</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 2:</span>N+1 Query Problem</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must formally define the N+1 problem, providing executable examples focusing on query count and shape, not framework-specific syntax</li>
+                <li>Must explain how ORMs cause N+1 problems, specifying lazy loading behavior and relationship traversal patterns</li>
+                <li>Must compare detection methods (profiling, query logging, monitoring), analyzing effectiveness and overhead</li>
+                <li>Must compare eager vs lazy loading strategies, analyzing trade-offs in memory usage, query count, and performance</li>
+                <li>Must explain performance tuning techniques (e.g., eager loading, batch loading), analyzing underlying query patterns and specifying when each is appropriate, not providing framework-specific API tutorials</li>
+                <li>Must analyze at least one real-world example, explaining the problem encountered and solution implemented</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 3:</span>Schema Migrations & CI/CD</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must analyze schema migration challenges, specifying downtime risks, rollback complexity, and data loss scenarios</li>
+                <li>Must compare Flyway vs Liquibase, analyzing differences in versioning, rollback support, and operational features, focusing on migration design implications, not tool feature comparisons</li>
+                <li>Must explain zero-downtime migration strategies, specifying techniques (additive changes, dual writes) and limitations, presenting them as risk mitigation, not guarantees</li>
+                <li>Must explain rollbacks and safety checks, specifying validation approaches and testing strategies, including data correctness verification, not just schema state restoration</li>
+                <li>Must compare production deployment strategies (blue-green, canary, backward compatibility), analyzing trade-offs</li>
+                <li>Must explain CI/CD integration, specifying how to automate migration testing and deployment safely, focusing on database migration logic, not CI pipeline tutorials</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 4:</span>Database Testing & Version Control</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain treating schema as code, specifying version control best practices and how they differ from application code</li>
+                <li>Must evaluate version control practices (migration files, review processes), analyzing how they prevent production issues</li>
+                <li>Must compare unit tests vs integration tests, specifying when to use each and trade-offs in speed vs realism</li>
+                <li>Must explain test containers, analyzing how they provide isolated database testing and comparing with alternatives</li>
+                <li>Must evaluate mock vs real databases, analyzing trade-offs in speed, realism, and maintenance burden</li>
+                <li>Must explain testing data migrations, specifying how to ensure correctness and safety without production data</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Presentation Requirements</h2>
+        <p>
+            All presentations must be 20–25 minutes in duration and include the following components:
+        </p>
+        <ul>
+            <li><strong>Problem Context:</strong> What problem this technology solves and why traditional databases struggle</li>
+            <li><strong>Core Concepts:</strong> Clear explanation with correct technical terminology</li>
+            <li><strong>System Details:</strong> How it works in practice with concrete examples</li>
+            <li><strong>Trade-offs:</strong> Strengths, limitations, and when it is appropriate vs not appropriate</li>
+            <li><strong>Real-World Perspective:</strong> At least one realistic application scenario and production considerations</li>
+        </ul>
+        <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+            <strong>Note:</strong> Presentations that only summarize definitions, list features, or copy diagrams without
+            interpretation will receive low marks. Each presentation must demonstrate analytical reasoning through
+            comparisons, trade-off analysis, and justification of design decisions. Reading slides verbatim or
+            presenting material that could be satisfied by reading documentation will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Correctness</td>
+                    <td>30%</td>
+                    <td>Accuracy of technical content, correct use of terminology, absence of errors</td>
+                </tr>
+                <tr>
+                    <td>Depth of Understanding</td>
+                    <td>25%</td>
+                    <td>Goes beyond surface-level definitions, demonstrates system-level comprehension</td>
+                </tr>
+                <tr>
+                    <td>Clarity and Structure</td>
+                    <td>20%</td>
+                    <td>Logical flow, clear explanations, appropriate use of examples and visuals</td>
+                </tr>
+                <tr>
+                    <td>Use of Examples and Trade-offs</td>
+                    <td>15%</td>
+                    <td>Concrete examples, discussion of limitations, comparison with alternatives</td>
+                </tr>
+                <tr>
+                    <td>Slide Quality and Time Management</td>
+                    <td>10%</td>
+                    <td>Professional formatting, appropriate pacing, stays within time limit</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommended References</h2>
+        <p><strong>Books:</strong></p>
+        <ul class="references-list">
+            <li>Kleppmann, Martin. <em>Designing Data-Intensive Applications</em>. O'Reilly Media, 2017. (Note: ORMs are not directly covered; Chapter 4: Encoding and Evolution covers schema evolution)</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Documentation:</strong></p>
+        <ul class="references-list">
+            <li><a href="https://flywaydb.org/documentation/">Flyway Documentation</a></li>
+            <li><a href="https://www.liquibase.org/get-started">Liquibase Documentation</a></li>
+            <li>ORM documentation: Hibernate, Django ORM, SQLAlchemy</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Academic / Technical:</strong></p>
+        <ul class="references-list">
+            <li>Database migration best practices and case studies</li>
+            <li>ORM performance analysis and optimization guides</li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparing Seminar Presentations - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>How to Prepare a Good Seminar Talk</h1>
+    </header>
+
+    <section>
+        <h2>Understanding the Assignment</h2>
+        <p>
+            Your presentation is not a tutorial, product demo, or documentation summary. It is an
+            analytical examination of a database technology or concept that demonstrates system-level
+            understanding. You must explain not only what a technology does but why it exists, when
+            it is appropriate, and what trade-offs it involves.
+        </p>
+        <p>
+            Read your topic page carefully. Each bullet point in your "Required Coverage" section
+            uses language like "must explain," "must compare," "must justify," or "must analyze."
+            These verbs indicate the level of reasoning required. "Explain" means provide clear
+            technical description. "Compare" means analyze differences and trade-offs. "Justify"
+            means provide reasoning for design decisions. "Analyze" means break down into components
+            and evaluate.
+        </p>
+    </section>
+
+    <section>
+        <h2>Research Strategy</h2>
+        <p>
+            Start with the recommended references on your topic page. Official documentation provides
+            accurate technical details. Academic textbooks and survey papers provide conceptual
+            frameworks. Engineering blogs from reputable sources provide real-world context.
+        </p>
+        <p>
+            Avoid sources that only summarize or list features without analysis. Wikipedia articles,
+            Medium posts without citations, and AI-generated explanations are not sufficient primary
+            sources. Use multiple sources and cross-reference information. If sources conflict, analyze
+            why and present both perspectives with your evaluation.
+        </p>
+        <p>
+            For real-world examples, seek out engineering blog posts, postmortems, or case studies from
+            companies that have deployed these technologies at scale. These provide concrete context
+            for trade-offs and limitations that documentation often omits.
+        </p>
+    </section>
+
+    <section>
+        <h2>Structuring Your Presentation</h2>
+        <h3>Problem Context (3–4 minutes)</h3>
+        <p>
+            Begin by clearly stating what problem this technology addresses. Why do traditional
+            databases struggle with this problem? Use concrete examples. For instance, if discussing
+            graph databases, show a query that requires multiple joins in SQL and explain why this
+            becomes expensive at scale.
+        </p>
+
+        <h3>Core Concepts (5–6 minutes)</h3>
+        <p>
+            Explain the fundamental model or mechanism. Use precise technical terminology. Include
+            diagrams or examples that illustrate the concept, but ensure you interpret them rather
+            than just showing them. Explain why the design choices were made.
+        </p>
+
+        <h3>System Details (5–6 minutes)</h3>
+        <p>
+            Describe how it works in practice. This might include architecture, query models, or
+            execution mechanisms. Use concrete examples: executable queries, code snippets, or
+            architectural diagrams with explanation. Avoid generic diagrams copied from documentation
+            without interpretation.
+        </p>
+
+        <h3>Trade-offs (4–5 minutes)</h3>
+        <p>
+            This is critical. Discuss strengths and limitations. Compare with alternatives. Explain
+            when this technology is appropriate and when it is not. Provide concrete scenarios. For
+            example, don't just say "graph databases are good for relationships" — explain when
+            relationship traversal depth makes graph databases necessary versus when relational joins
+            suffice.
+        </p>
+
+        <h3>Real-World Perspective (3–4 minutes)</h3>
+        <p>
+            Present at least one realistic application scenario. Discuss production considerations:
+            operational complexity, scaling challenges, failure modes. If possible, reference a
+            real-world deployment. Analyze what worked, what didn't, and why.
+        </p>
+    </section>
+
+    <section>
+        <h2>Common Pitfalls to Avoid</h2>
+        <h3>Definition-Only Presentations</h3>
+        <p>
+            Slides that only define terms or list features will receive low marks. Every definition
+            should be followed by analysis: why does this matter? How does it differ from alternatives?
+            What are the implications?
+        </p>
+
+        <h3>Reading Slides Verbatim</h3>
+        <p>
+            Your slides should support your presentation, not be your presentation. If you read slides
+            word-for-word, you demonstrate that you don't understand the material deeply enough to
+            explain it in your own words. Use slides as visual aids, not scripts.
+        </p>
+
+        <h3>Tool Tutorials</h3>
+        <p>
+            Avoid turning your presentation into a "how to use X" tutorial. Focus on system design
+            and trade-offs, not API usage. If you show code or queries, explain the underlying
+            mechanisms and design decisions, not just syntax.
+        </p>
+
+        <h3>Feature Lists</h3>
+        <p>
+            Don't simply list features or capabilities. Instead, analyze why those features exist,
+            what problems they solve, and what trade-offs they involve. Compare features across
+            systems to understand design differences.
+        </p>
+
+        <h3>Missing Trade-offs</h3>
+        <p>
+            Every technology has limitations. If your presentation only discusses benefits, you
+            haven't demonstrated sufficient understanding. Explicitly identify when the technology
+            is inappropriate and why alternatives are preferable.
+        </p>
+    </section>
+
+    <section>
+        <h2>Preparing for Questions</h2>
+        <p>
+            Expect questions about trade-offs, limitations, and comparisons. Be prepared to discuss
+            scenarios where your technology might not be appropriate. Think about edge cases and
+            failure modes. Consider how your technology would perform under different workload
+            patterns or scale requirements.
+        </p>
+        <p>
+            If you don't know the answer to a question, say so. It's better to acknowledge gaps
+            in knowledge than to speculate. However, you should be able to answer questions about
+            the core concepts and trade-offs you've presented.
+        </p>
+    </section>
+
+    <section>
+        <h2>Time Management</h2>
+        <p>
+            Practice your presentation and time it. Aim for 22–23 minutes to leave buffer for
+            questions or minor delays. If you consistently run over 25 minutes, you need to cut
+            content. Prioritize depth over breadth: it's better to cover fewer points thoroughly
+            than many points superficially.
+        </p>
+        <p>
+            If you finish significantly under 20 minutes, you likely haven't provided sufficient
+            depth. Review your topic page's required coverage and ensure you're addressing each
+            point with adequate analysis.
+        </p>
+    </section>
+
+    <section>
+        <h2>Final Advice</h2>
+        <p>
+            A good seminar presentation demonstrates that you understand not just what a technology
+            does, but why it exists, how it works, when to use it, and what trade-offs it involves.
+            Focus on analytical reasoning rather than comprehensive coverage. Depth and clarity are
+            more valuable than breadth and speed.
+        </p>
+        <p>
+            Remember: you are teaching your peers. Your goal is to help them understand the
+            technology well enough to evaluate it for their own projects. This requires explaining
+            trade-offs, limitations, and design decisions, not just listing capabilities.
+        </p>
+    </section>
+
+</div>
+</body>
+</html>
+

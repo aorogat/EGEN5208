@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 7: Performance, Scalability, Reliability - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .student-assignment {
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-assignment:last-of-type {
+            border-bottom: none;
+        }
+
+        .student-label {
+            color: #555;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rubric-table th {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .rubric-table td:first-child {
+            width: 30%;
+        }
+
+        .rubric-table td:nth-child(2) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .references-list {
+            margin: 6px 0 6px 0;
+            font-size: 0.9em;
+        }
+
+        .references-list li {
+            margin: 4px 0;
+            list-style: none;
+        }
+
+        .references-list a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Topic 7: Performance, Scalability, and Reliability</h1>
+        <div class="subtitle">Indexing, Query Optimization, Sharding, Replication, and High Availability</div>
+    </header>
+
+    <section>
+        <h2>Topic Overview</h2>
+        <p>
+            Database performance, scalability, and reliability determine system capacity and user experience
+            in production. Indexing strategies balance query speed against write performance and storage
+            overhead: B-tree indexes support range queries but require maintenance, while hash indexes provide
+            O(1) lookups but only support equality. Query optimization requires understanding execution plans,
+            identifying full table scans, and choosing appropriate join algorithms. Scaling approaches include
+            vertical scaling (larger machines), horizontal scaling via sharding (partitioning data across
+            machines), and read replicas (distributing read load). High availability patterns use replication
+            and failover to maintain service during machine failures. Students must evaluate performance
+            bottlenecks, design scalable architectures that handle growth, and implement reliability patterns
+            that maintain data consistency during failures.
+        </p>
+    </section>
+
+    <section>
+        <h2>Student Presentation Assignments</h2>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 1:</span>Indexing Strategies</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must compare B-tree vs hash indexes, analyzing structure differences, use cases, and performance characteristics with quantitative examples, using execution plan reasoning, not merely listing index types</li>
+                <li>Must explain composite indexes, specifying design principles and how they optimize multi-column queries</li>
+                <li>Must explain covering indexes, specifying how they eliminate table lookups and analyzing storage trade-offs</li>
+                <li>Must evaluate index maintenance costs, quantifying write performance impact and storage overhead</li>
+                <li>Must identify at least three index misuse examples (over-indexing, wrong types, missing indexes), explaining performance consequences</li>
+                <li>Must explain index selection strategies, specifying when to create indexes and what columns to include, analyzing design constraints and query patterns, not providing generic tuning advice</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 2:</span>Query Performance Anti-Patterns</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must analyze SELECT * performance impact, specifying when it matters (network transfer, covering indexes) and quantifying costs</li>
+                <li>Must explain missing WHERE clauses, analyzing full table scan costs and how to identify them in execution plans, emphasizing understanding execution plans, not SQL style advice</li>
+                <li>Must explain unbounded queries, specifying pagination strategies and result set limits to prevent memory exhaustion</li>
+                <li>Must identify bad join patterns (Cartesian products, missing conditions), explaining how they cause performance degradation</li>
+                <li>Must evaluate at least one real-world performance failure (incident, postmortem, or case study), analyzing root causes and lessons learned, focusing on design constraints that led to failure</li>
+                <li>Must explain query profiling and optimization techniques, specifying methodologies for identifying bottlenecks and analyzing execution plans, focusing on methodology, not tool screenshots</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 3:</span>Scalability & Resource Management</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain connection pooling, analyzing benefits, configuration parameters, and common pitfalls (connection leaks, pool exhaustion)</li>
+                <li>Must compare thread vs async models, analyzing blocking vs non-blocking I/O trade-offs in database access, remaining conceptual and system-level, not language-specific</li>
+                <li>Must explain sharding strategies, specifying horizontal partitioning approaches and key selection criteria</li>
+                <li>Must analyze read replicas, evaluating how they scale reads, replication lag implications, and consistency trade-offs</li>
+                <li>Must identify horizontal scaling limits, specifying when scaling out becomes difficult (cross-shard queries, transactions)</li>
+                <li>Must evaluate resource management, identifying bottlenecks and analyzing design constraints, not providing generic tuning lists</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 4:</span>Reliability & High Availability</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must compare replication models (master-slave, master-master, multi-master), analyzing consistency guarantees and failure modes, including concrete failure scenarios, not just topology descriptions</li>
+                <li>Must evaluate failover strategies, comparing automatic vs manual approaches and analyzing detection mechanisms</li>
+                <li>Must explain backup and recovery, specifying strategies and quantifying RTO (Recovery Time Objective) and RPO (Recovery Point Objective)</li>
+                <li>Must analyze multi-region deployments, evaluating consistency trade-offs, latency implications, and disaster recovery capabilities</li>
+                <li>Must explain designing for failure, specifying circuit breakers, retry strategies, and graceful degradation patterns</li>
+                <li>Must evaluate monitoring and alerting, specifying key metrics (latency, throughput, errors) and how they inform architectural decisions, not SRE tool tutorials</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Presentation Requirements</h2>
+        <p>
+            All presentations must be 20–25 minutes in duration and include the following components:
+        </p>
+        <ul>
+            <li><strong>Problem Context:</strong> What problem this technology solves and why traditional databases struggle</li>
+            <li><strong>Core Concepts:</strong> Clear explanation with correct technical terminology</li>
+            <li><strong>System Details:</strong> How it works in practice with concrete examples</li>
+            <li><strong>Trade-offs:</strong> Strengths, limitations, and when it is appropriate vs not appropriate</li>
+            <li><strong>Real-World Perspective:</strong> At least one realistic application scenario and production considerations</li>
+        </ul>
+        <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+            <strong>Note:</strong> Presentations that only summarize definitions, list features, or copy diagrams without
+            interpretation will receive low marks. Each presentation must demonstrate analytical reasoning through
+            comparisons, trade-off analysis, and justification of design decisions. Reading slides verbatim or
+            presenting material that could be satisfied by reading documentation will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Correctness</td>
+                    <td>30%</td>
+                    <td>Accuracy of technical content, correct use of terminology, absence of errors</td>
+                </tr>
+                <tr>
+                    <td>Depth of Understanding</td>
+                    <td>25%</td>
+                    <td>Goes beyond surface-level definitions, demonstrates system-level comprehension</td>
+                </tr>
+                <tr>
+                    <td>Clarity and Structure</td>
+                    <td>20%</td>
+                    <td>Logical flow, clear explanations, appropriate use of examples and visuals</td>
+                </tr>
+                <tr>
+                    <td>Use of Examples and Trade-offs</td>
+                    <td>15%</td>
+                    <td>Concrete examples, discussion of limitations, comparison with alternatives</td>
+                </tr>
+                <tr>
+                    <td>Slide Quality and Time Management</td>
+                    <td>10%</td>
+                    <td>Professional formatting, appropriate pacing, stays within time limit</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommended References</h2>
+        <p><strong>Books:</strong></p>
+        <ul class="references-list">
+            <li>Kleppmann, Martin. <em>Designing Data-Intensive Applications</em>. O'Reilly Media, 2017. (Chapters 3: Storage and Retrieval, 5: Replication, 6: Partitioning, 8: The Trouble with Distributed Systems, 9: Consistency and Consensus)</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Documentation:</strong></p>
+        <ul class="references-list">
+            <li>Database-specific performance tuning guides (PostgreSQL, MySQL, MongoDB)</li>
+            <li>Query optimization and indexing best practices</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Academic / Technical:</strong></p>
+        <ul class="references-list">
+            <li>Database indexing and query optimization research papers</li>
+            <li>High availability and replication case studies</li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>

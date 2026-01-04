@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 8: Security, Privacy, Data Management - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .student-assignment {
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-assignment:last-of-type {
+            border-bottom: none;
+        }
+
+        .student-label {
+            color: #555;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rubric-table th {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .rubric-table td:first-child {
+            width: 30%;
+        }
+
+        .rubric-table td:nth-child(2) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .references-list {
+            margin: 6px 0 6px 0;
+            font-size: 0.9em;
+        }
+
+        .references-list li {
+            margin: 4px 0;
+            list-style: none;
+        }
+
+        .references-list a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Topic 8: Security, Privacy, and Responsible Data Management</h1>
+        <div class="subtitle">Secure Access, Encryption, Compliance, and Ethical Data Handling</div>
+    </header>
+
+    <section>
+        <h2>Topic Overview</h2>
+        <p>
+            Database security and privacy are fundamental responsibilities requiring defense in depth:
+            multiple layers of protection from network access controls to application-level validation.
+            SQL injection remains a critical vulnerability when user input is concatenated into queries
+            rather than using parameterized statements. Authentication verifies user identity, while
+            authorization enforces access control through models like RBAC (role-based) or ABAC
+            (attribute-based). Encryption protects data at rest (disk encryption, database-level
+            encryption) and in transit (TLS/SSL), with key management being critical to effectiveness.
+            Compliance requirements like GDPR mandate data minimization, right to deletion, and audit
+            trails. Students must evaluate security threats, implement appropriate defenses, and design
+            systems that protect sensitive data while maintaining usability and performance.
+        </p>
+    </section>
+
+    <section>
+        <h2>Student Presentation Assignments</h2>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 1:</span>SQL Injection & Secure Access</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain SQL injection attacks, demonstrating how they work with executable examples focusing on attack mechanics, not sensational demos, and identifying common attack vectors</li>
+                <li>Must explain parameterized queries, specifying prevention techniques and best practices with code examples</li>
+                <li>Must analyze ORM security risks, explaining how ORMs can still be vulnerable (e.g., raw SQL, string interpolation)</li>
+                <li>Must explain secure coding practices, specifying input validation techniques and least privilege principles as system design constraints, not afterthoughts</li>
+                <li>Must evaluate at least one real breach example, analyzing why safeguards failed and how it could have been prevented through system design, not just describing what happened</li>
+                <li>Must explain defense in depth, specifying multiple layers of protection (network, database, application)</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 2:</span>Authentication & Authorization</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain database auth models, specifying user management approaches and access control mechanisms</li>
+                <li>Must compare RBAC vs ABAC, analyzing when each is appropriate and trade-offs in flexibility vs operational complexity, not just feature comparisons</li>
+                <li>Must explain least privilege principle, specifying how to grant minimum necessary access and common violations</li>
+                <li>Must explain secrets management, comparing approaches (environment variables, secret stores) and analyzing security trade-offs, including rotation strategies and blast radius considerations</li>
+                <li>Must evaluate application-level vs DB-level security, specifying where to enforce access control and trade-offs</li>
+                <li>Must explain multi-factor authentication and session management, specifying implementation approaches and analyzing risk reduction, not UX features</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 3:</span>Encryption & Data Protection</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must compare encryption at rest approaches (database-level vs disk-level), analyzing security and performance trade-offs</li>
+                <li>Must explain encryption in transit, specifying TLS/SSL configuration for database connections and certificate management</li>
+                <li>Must explain key management, specifying secure key storage approaches and treating key rotation as a requirement, not an optional enhancement</li>
+                <li>Must evaluate performance trade-offs, quantifying encryption overhead and optimization techniques</li>
+                <li>Must compare cloud provider encryption tools, analyzing managed service benefits and limitations, including trust and control trade-offs, not vendor feature comparisons</li>
+                <li>Must explain field-level encryption, specifying use cases and implementation approaches for protecting sensitive columns</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 4:</span>Data Privacy & Compliance</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain GDPR basics for engineers, specifying key requirements (data minimization, right to deletion) and technical obligations, including technical friction (backups, logs, replicas)</li>
+                <li>Must explain PII handling, specifying how to identify personally identifiable information and protection strategies</li>
+                <li>Must explain data retention and deletion, specifying how to implement right to be forgotten and technical challenges, analyzing system design implications (backups, replicas, audit logs)</li>
+                <li>Must explain audit trails, specifying what to log (access, modifications) and how to implement compliance requirements</li>
+                <li>Must evaluate ethical data storage considerations, analyzing responsible data practices and their technical implications, tying ethical considerations to system design choices, not philosophical discussions</li>
+                <li>Must compare other regulations (CCPA, HIPAA), specifying industry-specific requirements and how they differ from GDPR</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Presentation Requirements</h2>
+        <p>
+            All presentations must be 20–25 minutes in duration and include the following components:
+        </p>
+        <ul>
+            <li><strong>Problem Context:</strong> What problem this technology solves and why traditional databases struggle</li>
+            <li><strong>Core Concepts:</strong> Clear explanation with correct technical terminology</li>
+            <li><strong>System Details:</strong> How it works in practice with concrete examples</li>
+            <li><strong>Trade-offs:</strong> Strengths, limitations, and when it is appropriate vs not appropriate</li>
+            <li><strong>Real-World Perspective:</strong> At least one realistic application scenario and production considerations</li>
+        </ul>
+        <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+            <strong>Note:</strong> Presentations that only summarize definitions, list features, or copy diagrams without
+            interpretation will receive low marks. Each presentation must demonstrate analytical reasoning through
+            comparisons, trade-off analysis, and justification of design decisions. Reading slides verbatim or
+            presenting material that could be satisfied by reading documentation will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Correctness</td>
+                    <td>30%</td>
+                    <td>Accuracy of technical content, correct use of terminology, absence of errors</td>
+                </tr>
+                <tr>
+                    <td>Depth of Understanding</td>
+                    <td>25%</td>
+                    <td>Goes beyond surface-level definitions, demonstrates system-level comprehension</td>
+                </tr>
+                <tr>
+                    <td>Clarity and Structure</td>
+                    <td>20%</td>
+                    <td>Logical flow, clear explanations, appropriate use of examples and visuals</td>
+                </tr>
+                <tr>
+                    <td>Use of Examples and Trade-offs</td>
+                    <td>15%</td>
+                    <td>Concrete examples, discussion of limitations, comparison with alternatives</td>
+                </tr>
+                <tr>
+                    <td>Slide Quality and Time Management</td>
+                    <td>10%</td>
+                    <td>Professional formatting, appropriate pacing, stays within time limit</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommended References</h2>
+        <p><strong>Books:</strong></p>
+        <ul class="references-list">
+            <li>Kleppmann, Martin. <em>Designing Data-Intensive Applications</em>. O'Reilly Media, 2017. (Note: Security is not a primary focus; Chapter 8: The Trouble with Distributed Systems covers fault tolerance)</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Documentation:</strong></p>
+        <ul class="references-list">
+            <li><a href="https://owasp.org/www-community/attacks/SQL_Injection">OWASP SQL Injection Guide</a></li>
+            <li>Database security best practices (PostgreSQL, MySQL, MongoDB security guides)</li>
+            <li><a href="https://gdpr.eu/">GDPR Official Information</a></li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Academic / Technical:</strong></p>
+        <ul class="references-list">
+            <li>Security research papers on database vulnerabilities and defenses</li>
+            <li>Privacy and compliance case studies</li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>

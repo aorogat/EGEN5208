@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Rationale - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Course Rationale</h1>
+    </header>
+
+    <section>
+        <h2>Why These Topics Matter</h2>
+        <p>
+            Modern software systems operate at scales and complexities where database design decisions
+            fundamentally determine system architecture, performance characteristics, and operational
+            feasibility. The shift from single-machine relational databases to distributed, specialized
+            data stores reflects real engineering constraints: relational databases excel at ACID transactions
+            and complex queries but struggle with horizontal scaling, high write throughput, and
+            relationship-heavy traversal patterns.
+        </p>
+        <p>
+            This course module addresses the gap between understanding database fundamentals and making
+            informed decisions in production systems. NoSQL databases are not replacements for relational
+            systems but specialized tools optimized for specific access patterns. Graph databases enable
+            efficient relationship traversal that would require expensive joins in relational systems.
+            Vector databases address the computational challenge of similarity search in high-dimensional
+            spaces, which is essential for modern AI applications. Key-value stores provide sub-millisecond
+            latency for simple lookups at scales where relational databases become bottlenecks.
+        </p>
+        <p>
+            Beyond data model selection, database decisions constrain software architecture. Microservices
+            architectures require database-per-service patterns that eliminate distributed transactions,
+            necessitating eventual consistency and saga patterns. Event-driven architectures use append-only
+            logs and materialized views to achieve scalability at the cost of increased complexity. These
+            are not abstract patterns but practical responses to the CAP theorem's constraints on distributed
+            systems.
+        </p>
+        <p>
+            Performance, reliability, and security are not afterthoughts but design constraints that must
+            be evaluated from the start. Indexing strategies determine query performance and write overhead.
+            Replication and sharding enable horizontal scaling but introduce consistency and operational
+            complexity. Security vulnerabilities like SQL injection and data breaches result from treating
+            security as a checklist rather than a system design constraint. Privacy regulations like GDPR
+            require technical solutions for data minimization, retention, and deletion that affect database
+            architecture.
+        </p>
+        <p>
+            This module prepares students to evaluate database technologies, understand trade-offs, and
+            make informed decisions in production systems. The focus is on system-level reasoning, not
+            tool proficiency. Students must analyze when specialized databases are necessary versus when
+            general-purpose systems suffice, understand how database choices affect system architecture,
+            and evaluate performance, reliability, and security as design constraints rather than
+            optimization problems.
+        </p>
+    </section>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 2: Vector Databases for AI - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .student-assignment {
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-assignment:last-of-type {
+            border-bottom: none;
+        }
+
+        .student-label {
+            color: #555;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rubric-table th {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .rubric-table td:first-child {
+            width: 30%;
+        }
+
+        .rubric-table td:nth-child(2) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .references-list {
+            margin: 6px 0 6px 0;
+            font-size: 0.9em;
+        }
+
+        .references-list li {
+            margin: 4px 0;
+            list-style: none;
+        }
+
+        .references-list a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Topic 2: NoSQL – Vector Databases for AI Applications</h1>
+        <div class="subtitle">Vector Embeddings, Similarity Search, and Milvus</div>
+    </header>
+
+    <section>
+        <h2>Topic Overview</h2>
+        <p>
+            Vector databases specialize in similarity search over high-dimensional embeddings, enabling semantic
+            queries that traditional databases cannot efficiently support. Unlike exact-match databases, vector
+            databases use approximate nearest neighbor (ANN) algorithms to find similar vectors based on distance
+            metrics (cosine, L2, inner product) with sub-linear query complexity. This addresses the curse of
+            dimensionality where exact search becomes computationally infeasible for embeddings with hundreds
+            of dimensions. Vector databases are essential for retrieval-augmented generation (RAG), semantic
+            search, and recommendation systems where similarity in embedding space corresponds to semantic or
+            behavioral similarity. The Milvus architecture demonstrates how distributed vector databases manage
+            indexing, storage, and query execution at scale. Students must evaluate when vector databases are
+            necessary versus when traditional databases with full-text search or simpler similarity measures suffice.
+        </p>
+    </section>
+
+    <section>
+        <h2>Student Presentation Assignments</h2>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 1:</span>Vector Databases Fundamentals</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain embeddings and vector similarity search, specifying the mathematical foundation and how semantic meaning maps to vector space</li>
+                <li>Must analyze why traditional databases fail for semantic search, demonstrating with query examples why exact-match indexes are insufficient</li>
+                <li>Must compare distance metrics (cosine similarity, L2, inner product), explaining when each is appropriate and how choice affects results</li>
+                <li>Must justify why approximate nearest neighbor (ANN) is necessary, analyzing computational complexity of exact search in high dimensions</li>
+                <li>Must evaluate at least two AI-driven use cases (e.g., RAG, recommendation systems), explaining why vector similarity is necessary versus alternatives</li>
+                <li>Must discuss trade-offs: precision vs recall in ANN search, latency vs accuracy, and when approximate results are acceptable</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 2:</span>Milvus Architecture</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain Milvus components (QueryNode, DataNode, IndexNode), specifying responsibilities and how they coordinate for queries</li>
+                <li>Must analyze storage layers: how object storage and metadata management differ from traditional database storage</li>
+                <li>Must explain at least two indexing methods (IVF, HNSW, or PQ), comparing their trade-offs in build time, query latency, and recall</li>
+                <li>Must explain scalability and distributed execution model, identifying bottlenecks and how Milvus handles horizontal scaling</li>
+                <li>Must compare Milvus with at least two alternatives (Pinecone, Weaviate, or FAISS), analyzing architectural differences and when each is preferable</li>
+                <li>Must evaluate architectural trade-offs: managed vs self-hosted, consistency guarantees, and operational complexity</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 3:</span>Using Milvus in Applications</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain data ingestion and schema design for vector data, specifying how to structure collections and handle metadata</li>
+                <li>Must analyze index creation and tuning, explaining how parameter selection (e.g., HNSW M, ef_construction) affects build time and query performance</li>
+                <li>Must compare query patterns for AI applications, analyzing when batch processing is preferable to real-time queries</li>
+                <li>Must justify index type selection based on latency vs recall trade-offs, providing quantitative guidance where available</li>
+                <li>Must explain integration patterns with LLM pipelines (e.g., RAG architectures), specifying how vector search fits into the data flow and analyzing system design trade-offs, not API usage</li>
+                <li>Must identify at least three common patterns and anti-patterns, explaining why certain approaches work or fail</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 4:</span>Production Challenges & Best Practices</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must analyze data freshness and re-indexing strategies, explaining trade-offs between incremental updates and full rebuilds</li>
+                <li>Must evaluate cost and memory considerations, quantifying resource requirements for different index types and data volumes</li>
+                <li>Must explain security and multi-tenancy in vector databases, comparing isolation strategies and their limitations</li>
+                <li>Must analyze monitoring and failure handling, specifying key metrics and how to detect and recover from failures</li>
+                <li>Must evaluate at least one real-world case study, explaining production challenges encountered and solutions implemented</li>
+                <li>Must identify scenarios where vector databases are not appropriate, justifying when simpler alternatives suffice</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Presentation Requirements</h2>
+        <p>
+            All presentations must be 20–25 minutes in duration and include the following components:
+        </p>
+        <ul>
+            <li><strong>Problem Context:</strong> What problem this technology solves and why traditional databases struggle</li>
+            <li><strong>Core Concepts:</strong> Clear explanation with correct technical terminology</li>
+            <li><strong>System Details:</strong> How it works in practice with concrete examples</li>
+            <li><strong>Trade-offs:</strong> Strengths, limitations, and when it is appropriate vs not appropriate</li>
+            <li><strong>Real-World Perspective:</strong> At least one realistic application scenario and production considerations</li>
+        </ul>
+        <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+            <strong>Note:</strong> Presentations that only summarize definitions, list features, or copy diagrams without
+            interpretation will receive low marks. Each presentation must demonstrate analytical reasoning through
+            comparisons, trade-off analysis, and justification of design decisions. Reading slides verbatim or
+            presenting material that could be satisfied by reading documentation will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Correctness</td>
+                    <td>30%</td>
+                    <td>Accuracy of technical content, correct use of terminology, absence of errors</td>
+                </tr>
+                <tr>
+                    <td>Depth of Understanding</td>
+                    <td>25%</td>
+                    <td>Goes beyond surface-level definitions, demonstrates system-level comprehension</td>
+                </tr>
+                <tr>
+                    <td>Clarity and Structure</td>
+                    <td>20%</td>
+                    <td>Logical flow, clear explanations, appropriate use of examples and visuals</td>
+                </tr>
+                <tr>
+                    <td>Use of Examples and Trade-offs</td>
+                    <td>15%</td>
+                    <td>Concrete examples, discussion of limitations, comparison with alternatives</td>
+                </tr>
+                <tr>
+                    <td>Slide Quality and Time Management</td>
+                    <td>10%</td>
+                    <td>Professional formatting, appropriate pacing, stays within time limit</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommended References</h2>
+        <p><strong>Books:</strong></p>
+        <ul class="references-list">
+            <li>Kleppmann, Martin. <em>Designing Data-Intensive Applications</em>. O'Reilly Media, 2017. (Note: Vector databases are not directly covered; Chapter 3 on Storage and Retrieval provides relevant background)</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Documentation:</strong></p>
+        <ul class="references-list">
+            <li><a href="https://milvus.io/docs">Milvus Documentation</a></li>
+            <li><a href="https://milvus.io/docs/index.md">Milvus Indexing Guide</a></li>
+            <li><a href="https://www.pinecone.io/learn/vector-database/">Vector Database Fundamentals</a></li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Academic / Technical:</strong></p>
+        <ul class="references-list">
+            <li>ANN survey papers: HNSW, IVF, and approximate nearest neighbor algorithms</li>
+            <li>FAISS documentation and research papers (Facebook AI Research)</li>
+            <li>RAG (Retrieval-Augmented Generation) architecture papers</li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>

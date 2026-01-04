@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 1: Graph-Oriented Databases - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .student-assignment {
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-assignment:last-of-type {
+            border-bottom: none;
+        }
+
+        .student-label {
+            color: #555;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        ul {
+            margin: 6px 0 6px 20px;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .rubric-table th,
+        .rubric-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rubric-table th {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .rubric-table td:first-child {
+            width: 30%;
+        }
+
+        .rubric-table td:nth-child(2) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .references-list {
+            margin: 6px 0 6px 0;
+            font-size: 0.9em;
+        }
+
+        .references-list li {
+            margin: 4px 0;
+            list-style: none;
+        }
+
+        .references-list a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Topics</a>
+
+    <header>
+        <h1>Topic 1: NoSQL – Graph-Oriented Databases</h1>
+        <div class="subtitle">Property Graph Model, Neo4j Architecture, and Cypher Query Language</div>
+    </header>
+
+    <section>
+        <h2>Topic Overview</h2>
+        <p>
+            Graph databases implement a data model where relationships between entities are stored as first-class
+            objects, enabling efficient traversal of connected data without multi-table joins. The property graph
+            model represents entities as nodes with properties and connections as typed, directed edges with their
+            own properties. This model addresses query patterns where relationship traversal depth and path analysis
+            are central operations, which relational databases handle inefficiently through repeated joins. Neo4j
+            implements native graph storage using index-free adjacency, enabling constant-time relationship traversal
+            at the cost of write performance and horizontal scaling limitations. The Cypher query language provides
+            pattern-matching syntax optimized for graph traversal, contrasting with SQL's set-based operations.
+            Students must evaluate when graph databases provide performance and modeling advantages over relational
+            or document stores, and identify scenarios where graph databases are inappropriate.
+        </p>
+    </section>
+
+    <section>
+        <h2>Student Presentation Assignments</h2>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 1:</span>Graph Data Models & When to Use Them</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must formally define the property graph model, specifying how nodes, relationships, and properties differ from relational tuples and document fields</li>
+                <li>Must compare graph databases with relational and document models, analyzing expressiveness vs performance trade-offs with concrete query examples</li>
+                <li>Must justify graph database selection for at least two use cases (e.g., social networks, fraud detection) by demonstrating why relational joins would be inefficient</li>
+                <li>Must identify and explain at least three scenarios where graph databases are inappropriate, justifying why alternative models are preferable</li>
+                <li>Must discuss trade-offs: query complexity for deep traversals, horizontal scaling limitations, and consistency model constraints</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 2:</span>Neo4j Architecture & Storage</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain Neo4j's architecture components (transaction log, page cache, storage engine) and how data flows through the system</li>
+                <li>Must explain index-free adjacency: how relationships are stored physically adjacent to nodes, enabling constant-time traversal</li>
+                <li>Must analyze Neo4j's transaction model, specifying ACID guarantees and how they differ from distributed graph databases</li>
+                <li>Must explain clustering and replication design, identifying single-writer limitations and replication lag implications</li>
+                <li>Must identify specific scalability bottlenecks (e.g., write contention, memory requirements) with quantitative constraints where available</li>
+                <li>Must compare Neo4j's native storage with graph databases using relational backends (e.g., ArangoDB), analyzing performance trade-offs</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 3:</span>Cypher Query Language</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain Cypher's pattern-matching paradigm, demonstrating core constructs (MATCH, CREATE, WHERE, RETURN) with executable query examples</li>
+                <li>Must compare Cypher pattern matching with equivalent SQL joins, analyzing conceptual differences and performance implications</li>
+                <li>Must demonstrate variable-length path queries (e.g., *1..5) and explain traversal cost differences compared to fixed-depth queries</li>
+                <li>Must analyze performance considerations: when pattern matching becomes expensive and how query planning differs from SQL</li>
+                <li>Must identify at least three query anti-patterns (e.g., unbounded traversals, missing constraints) and explain optimization strategies</li>
+            </ul>
+        </div>
+
+        <div class="student-assignment">
+            <h3><span class="student-label">Student 4:</span>Graph Analytics & Real-World Applications</h3>
+            <p><strong>Required Coverage:</strong></p>
+            <ul>
+                <li>Must explain at least three graph algorithms from Neo4j GDS (e.g., PageRank, shortest path, community detection), specifying their computational complexity and use cases</li>
+                <li>Must compare analytical vs transactional workloads in graph databases, analyzing how Neo4j handles each and identifying performance trade-offs</li>
+                <li>Must analyze a real-world application (e.g., LinkedIn connections, recommendation engines), explaining how graph structure enables the use case</li>
+                <li>Must explain integration patterns with ML or recommendation systems, specifying how graph data feeds into ML pipelines</li>
+                <li>Must evaluate production strengths and weaknesses: when graph analytics outperform alternatives and when they do not</li>
+                <li>Must justify when to use graph analytics vs matrix-based or relational approaches for similar problems</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Presentation Requirements</h2>
+        <p>
+            All presentations must be 20–25 minutes in duration and include the following components:
+        </p>
+        <ul>
+            <li><strong>Problem Context:</strong> What problem this technology solves and why traditional databases struggle</li>
+            <li><strong>Core Concepts:</strong> Clear explanation with correct technical terminology</li>
+            <li><strong>System Details:</strong> How it works in practice with concrete examples</li>
+            <li><strong>Trade-offs:</strong> Strengths, limitations, and when it is appropriate vs not appropriate</li>
+            <li><strong>Real-World Perspective:</strong> At least one realistic application scenario and production considerations</li>
+        </ul>
+        <p style="margin-top: 8px; color: #666; font-size: 0.9em;">
+            <strong>Note:</strong> Presentations that only summarize definitions, list features, or copy diagrams without
+            interpretation will receive low marks. Each presentation must demonstrate analytical reasoning through
+            comparisons, trade-off analysis, and justification of design decisions. Reading slides verbatim or
+            presenting material that could be satisfied by reading documentation will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Weight</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Correctness</td>
+                    <td>30%</td>
+                    <td>Accuracy of technical content, correct use of terminology, absence of errors</td>
+                </tr>
+                <tr>
+                    <td>Depth of Understanding</td>
+                    <td>25%</td>
+                    <td>Goes beyond surface-level definitions, demonstrates system-level comprehension</td>
+                </tr>
+                <tr>
+                    <td>Clarity and Structure</td>
+                    <td>20%</td>
+                    <td>Logical flow, clear explanations, appropriate use of examples and visuals</td>
+                </tr>
+                <tr>
+                    <td>Use of Examples and Trade-offs</td>
+                    <td>15%</td>
+                    <td>Concrete examples, discussion of limitations, comparison with alternatives</td>
+                </tr>
+                <tr>
+                    <td>Slide Quality and Time Management</td>
+                    <td>10%</td>
+                    <td>Professional formatting, appropriate pacing, stays within time limit</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommended References</h2>
+        <p><strong>Books:</strong></p>
+        <ul class="references-list">
+            <li>Robinson, Ian et al. <em>Graph Databases</em>. O'Reilly Media, 2015.</li>
+            <li>Kleppmann, Martin. <em>Designing Data-Intensive Applications</em>. O'Reilly Media, 2017. (Chapter 2: Graph-Like Data Models)</li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Documentation:</strong></p>
+        <ul class="references-list">
+            <li><a href="https://neo4j.com/docs/">Neo4j Official Documentation</a></li>
+            <li><a href="https://neo4j.com/docs/cypher-manual/">Cypher Manual</a></li>
+            <li><a href="https://neo4j.com/docs/graph-data-science/">Neo4j Graph Data Science</a></li>
+        </ul>
+        <p style="margin-top: 8px;"><strong>Academic / Technical:</strong></p>
+        <ul class="references-list">
+            <li>Survey papers on graph data management (SIGMOD, VLDB proceedings)</li>
+            <li>Neo4j Graph Data Science algorithms reference and performance guides</li>
+        </ul>
+    </section>
+
+</div>
+</body>
+</html>
