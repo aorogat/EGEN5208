@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Report Requirements - EGEN Topics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        .requirements-table .req-col {
+            width: 200px;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .requirements-table {
+                font-size: 0.8em;
+            }
+
+            .requirements-table th,
+            .requirements-table td {
+                padding: 6px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="seminar.html" class="back-link">← Back to Seminar Topics</a>
+
+    <header>
+        <h1>Seminar Report Requirements</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University
+        </div>
+    </section>
+
+    <section>
+        <h2>Overview</h2>
+        <p>
+            Each student must submit an individual PDF report documenting their assigned seminar topic.
+            The report should demonstrate deep understanding of the topic, critical analysis, and clear
+            technical communication. The report complements the oral presentation and allows for more
+            detailed exploration of technical concepts, comparisons, and examples.
+        </p>
+    </section>
+
+    <section>
+        <h2>Report Format Requirements</h2>
+        
+        <h3>Document Specifications</h3>
+        <ul>
+            <li><strong>Format:</strong> PDF only</li>
+            <li><strong>Length:</strong> 8–12 pages (excluding cover page, table of contents, references, and appendices)</li>
+            <li><strong>Page Size:</strong> Standard letter size (8.5" × 11")</li>
+            <li><strong>Margins:</strong> 1 inch (2.54 cm) on all sides</li>
+            <li><strong>Font:</strong> 11pt or 12pt, serif or sans-serif (e.g., Times New Roman, Arial, Calibri)</li>
+            <li><strong>Line Spacing:</strong> 1.5 or double spacing</li>
+            <li><strong>Page Numbers:</strong> Required on all pages except cover page</li>
+        </ul>
+
+        <h3>Required Sections</h3>
+        <ol>
+            <li><strong>Cover Page:</strong> Title, student name, student number, course code, date, topic number and title</li>
+            <li><strong>Table of Contents:</strong> With page numbers</li>
+            <li><strong>Introduction:</strong> Context, motivation, and scope of the topic</li>
+            <li><strong>Technical Content:</strong> Core concepts, system architecture, design decisions, trade-offs</li>
+            <li><strong>Analysis and Comparison:</strong> Comparison with alternatives, limitations, failure cases</li>
+            <li><strong>Concrete Examples:</strong> Real-world use cases, production scenarios, code snippets or diagrams where appropriate</li>
+            <li><strong>Conclusion:</strong> Summary, key takeaways, and implications</li>
+            <li><strong>References:</strong> Properly cited academic and technical sources</li>
+        </ol>
+
+        <h3>Content Requirements</h3>
+        <ul>
+            <li>All content from the presentation requirements must be addressed in the report</li>
+            <li>Must include at least one comparison with alternative approaches or systems</li>
+            <li>Must identify and analyze at least one limitation or failure case</li>
+            <li>Must provide concrete examples with justification. Concrete examples may include system architectures, production incidents, benchmarks, attack scenarios, or configuration patterns, depending on the topic.</li>
+            <li>Diagrams, tables, and figures are encouraged and should be properly captioned and referenced. Not all reports require code; architectural diagrams and structured analysis are equally valid where appropriate.</li>
+            <li>Code snippets or configuration examples should be formatted clearly and explained when included</li>
+        </ul>
+
+        <h3>Writing Standards</h3>
+        <ul>
+            <li>Formal academic tone; avoid conversational language</li>
+            <li>Precise technical terminology</li>
+            <li>Clear, declarative sentences</li>
+            <li>Logical flow between sections</li>
+            <li>Proper grammar and spelling</li>
+            <li>Consistent citation style (IEEE, ACM, or APA format)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Submission Requirements</h2>
+        <ul>
+            <li><strong>File Naming:</strong> <code>EGEN5208W_Report_[LastName]_[FirstName]_[Topic#].pdf</code></li>
+            <li><strong>Submission Method:</strong> Submit through Brightspace</li>
+            <li><strong>Due Date:</strong> As specified in Brightspace (same day as the presentation date)</li>
+            <li><strong>Late Policy:</strong> As per course policy stated in Brightspace</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Evaluation Criteria</h2>
+        <p>
+            Reports are evaluated based on the following dimensions:
+        </p>
+        <table class="requirements-table">
+            <thead>
+                <tr>
+                    <th class="req-col">Criterion</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Technical Depth</strong></td>
+                    <td>Accurate understanding of core concepts, system architecture, and design principles. Demonstrates ability to explain complex technical topics clearly.</td>
+                </tr>
+                <tr>
+                    <td><strong>Analysis and Critical Thinking</strong></td>
+                    <td>Quality of comparisons, trade-off analysis, identification of limitations, and justification of design decisions.</td>
+                </tr>
+                <tr>
+                    <td><strong>Concrete Examples</strong></td>
+                    <td>Relevance and clarity of real-world examples, use cases, and technical demonstrations.</td>
+                </tr>
+                <tr>
+                    <td><strong>Organization and Structure</strong></td>
+                    <td>Logical flow, clear section organization, effective use of headings, tables, and figures.</td>
+                </tr>
+                <tr>
+                    <td><strong>Writing Quality</strong></td>
+                    <td>Clarity, precision, formal academic tone, grammar, spelling, and proper citation format.</td>
+                </tr>
+                <tr>
+                    <td><strong>Completeness</strong></td>
+                    <td>All required sections present, all presentation requirements addressed, appropriate length and depth.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Additional Notes</h2>
+        <ul>
+            <li>The report should be written independently, even if multiple students present on the same topic</li>
+            <li>Plagiarism will be handled according to Carleton University's academic integrity policies</li>
+            <li>All sources must be properly cited; direct quotes must be clearly marked</li>
+            <li>Diagrams and figures should be original or properly attributed if adapted from sources</li>
+            <li>Questions about report requirements should be directed to the instructor via Brightspace</li>
+        </ul>
+    </section>
+
+    <footer>
+        Course seminar materials · Winter 2026
+    </footer>
+
+</div>
+</body>
+</html>
+

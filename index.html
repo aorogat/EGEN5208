@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EGEN Topics – Advanced Database Systems</title>
+    <title>EGEN5208W Databases for Soft Engineers - Carleton University</title>
     <style>
         * {
             box-sizing: border-box;
@@ -67,53 +67,76 @@
             color: #666;
         }
 
-        .topics-table {
+        .schedule-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 8px;
-            font-size: 0.95em;
-        }
-
-        .topics-table tr {
-            border-bottom: 1px solid #eee;
-        }
-
-        .topics-table tr:last-child {
-            border-bottom: none;
-        }
-
-        .topics-table td {
-            padding: 8px 8px 8px 0;
-            vertical-align: top;
-        }
-
-        .topic-number {
-            width: 70px;
-            color: #555;
-            font-weight: 500;
-            white-space: nowrap;
             font-size: 0.9em;
         }
 
-        .topic-title {
-            font-weight: 500;
-            margin-bottom: 2px;
+        .schedule-table th,
+        .schedule-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
         }
 
-        .topic-title a {
+        .schedule-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        .schedule-table .week-col {
+            width: 60px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .schedule-table .date-col {
+            width: 100px;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .schedule-table .topic-col {
+            color: #333;
+        }
+
+        .schedule-table .quiz-col {
+            width: 80px;
+            color: #555;
+            text-align: center;
+        }
+
+        .winter-break {
+            background: #fee;
+        }
+
+        .project-release {
+            background: #efe;
+        }
+
+        .project-due {
+            background: #efe;
+        }
+
+        .student-presentations {
+            background: #fef;
+        }
+
+        .link-section {
+            margin-top: 20px;
+        }
+
+        .link-section a {
             color: #1a5490;
             text-decoration: none;
         }
 
-        .topic-title a:hover {
+        .link-section a:hover {
             text-decoration: underline;
-        }
-
-        .topic-desc {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 2px;
-            line-height: 1.4;
         }
 
         footer {
@@ -134,8 +157,13 @@
                 font-size: 1.5em;
             }
 
-            .topics-table td {
-                padding: 6px 6px 6px 0;
+            .schedule-table {
+                font-size: 0.8em;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 4px 4px;
             }
         }
     </style>
@@ -144,170 +172,200 @@
 <div class="container">
 
     <header>
-        <h1>EGEN Topics: Advanced Database Systems</h1>
-        <div class="subtitle">Seminar Modules — Final 4 Weeks</div>
+        <h1>EGEN5208W Databases for Soft Engineers</h1>
+        <div class="subtitle">
+            Department of Systems and Computer Engineering · Carleton University
+        </div>
+        <div class="meta" style="margin-top: 8px;">
+            <strong>Instructor:</strong> Abdelghny Orogat
+        </div>
     </header>
 
     <section>
-        <div class="meta" style="margin-top: 0;">
-            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
-            <strong>Instructor:</strong> Abdelghny Orogat<br>
-            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
-            <strong>University:</strong> Carleton University
-        </div>
-    </section>
-
-    <section>
-        <h2>Overview</h2>
-        <p>
-            This module covers advanced database systems with emphasis on NoSQL technologies,
-            distributed architectures, performance optimization, and data management practices.
-            Topics are presented through student-led seminars focusing on system design,
-            implementation trade-offs, and production considerations.
+        <p style="margin-top: 0; color: #555; font-size: 0.9em;">
+            This page provides a public overview of the course structure and schedule.
         </p>
-        <div class="meta">
-            Format: 4 presentations per topic, 20–25 minutes each
-        </div>
     </section>
 
     <section>
         <h2>Course Information</h2>
-        <ul style="list-style: none; margin-left: 0;">
-            <li style="margin: 6px 0;">
-                <a href="course-rationale.html" style="color: #1a5490; text-decoration: none;">Course Rationale</a>
-                <span style="color: #666; font-size: 0.9em;"> — Why these topics matter</span>
-            </li>
-            <li style="margin: 6px 0;">
-                <a href="preparing-presentations.html" style="color: #1a5490; text-decoration: none;">Preparing Seminar Presentations</a>
-                <span style="color: #666; font-size: 0.9em;"> — How to prepare a good seminar talk</span>
-            </li>
-            <li style="margin: 6px 0;">
-                <a href="presentation-checklist.html" style="color: #1a5490; text-decoration: none;">Presentation Checklist</a>
-                <span style="color: #666; font-size: 0.9em;"> — Student presentation checklist</span>
-            </li>
-        </ul>
+        <p>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>Institution:</strong> Carleton University
+        </p>
+        <div class="meta" style="margin-top: 12px;">
+            <strong>Authoritative Systems:</strong><br>
+            Course materials, slides, announcements, and grades are managed through <a href="https://brightspace.carleton.ca" style="color: #1a5490; text-decoration: none;">Brightspace</a>.<br>
+            Class times, locations, and official registration information are available through <a href="https://central.carleton.ca" style="color: #1a5490; text-decoration: none;">Carleton Central</a>.
+        </div>
     </section>
 
     <section>
-        <h2>Seminar Topics</h2>
-
-        <table class="topics-table">
-            <tr>
-                <td class="topic-number">1</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic1-graph-databases.html">
-                            NoSQL – Graph-Oriented Databases
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        Property graph model, Neo4j architecture, Cypher query language, graph analytics
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">2</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic2-vector-databases.html">
-                            NoSQL – Vector Databases for AI Applications
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        Vector embeddings, similarity search, Milvus architecture, production challenges
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">3</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic3-key-value-stores.html">
-                            NoSQL – Key-Value Stores Beyond Caching
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        Redis, DynamoDB, consistency models, design patterns and scaling strategies
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">4</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic4-time-series.html">
-                            NoSQL – Time-Series Databases
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        InfluxDB, TimescaleDB, time-series workloads, retention and downsampling
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">5</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic5-architecture.html">
-                            Databases in Software Architecture & Design
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        Microservices patterns, distributed transactions, event-driven architectures, CAP theorem
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">6</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic6-orm-tooling.html">
-                            ORM, Tooling, and Developer Productivity
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        ORM patterns, N+1 queries, schema migrations, CI/CD, database testing
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">7</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic7-performance.html">
-                            Performance, Scalability, and Reliability
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        Indexing strategies, query optimization, sharding, replication, high availability
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-number">8</td>
-                <td>
-                    <div class="topic-title">
-                        <a href="topic8-security.html">
-                            Security, Privacy, and Responsible Data Management
-                        </a>
-                    </div>
-                    <div class="topic-desc">
-                        SQL injection, authentication, encryption, compliance, ethical data handling
-                    </div>
-                </td>
-            </tr>
+        <h2>Evaluation</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                    <th style="width: 100px; text-align: right;">Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Quizzes (4)</td>
+                    <td>Four short quizzes assessing core database concepts covered throughout the term.</td>
+                    <td style="text-align: right;">27%</td>
+                </tr>
+                <tr>
+                    <td>Attendance & Participation</td>
+                    <td>Attendance and participation during lectures.</td>
+                    <td style="text-align: right;">3%</td>
+                </tr>
+                <tr>
+                    <td>Individual Final Project</td>
+                    <td>Design and implementation of a database-backed software system completed individually.</td>
+                    <td style="text-align: right;">40%</td>
+                </tr>
+                <tr>
+                    <td>Seminar Presentation & Report</td>
+                    <td>Individual 20-minute seminar presentation and an individual PDF report documenting the topic.</td>
+                    <td style="text-align: right;">30%</td>
+                </tr>
+                <tr style="border-top: 2px solid #222;">
+                    <td><strong>Total</strong></td>
+                    <td></td>
+                    <td style="text-align: right;"><strong>100%</strong></td>
+                </tr>
+            </tbody>
         </table>
     </section>
 
+    <section>
+        <h2>Course Schedule</h2>
+        <p style="margin-bottom: 8px; color: #666; font-size: 0.85em;">
+            For official class times and locations, consult <a href="https://central.carleton.ca" style="color: #1a5490; text-decoration: none;">Carleton Central</a>.
+        </p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Topic</th>
+                    <th>Quiz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="week-col">1</td>
+                    <td class="date-col">Jan 8</td>
+                    <td class="topic-col">Database Introduction and Course Outline + Relational Algebra; Tuple Relational Calculus</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr>
+                    <td class="week-col">2</td>
+                    <td class="date-col">Jan 15</td>
+                    <td class="topic-col">SQL - DDL and DML; SQL (DQL: SELECT-FROM-WHERE-...)</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr>
+                    <td class="week-col">3</td>
+                    <td class="date-col">Jan 22</td>
+                    <td class="topic-col">SQL (DQL: AGR()-GROUP BY-HAVING-SETS-...); SQL (DQL: Complex Queries and SubQueries)</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr>
+                    <td class="week-col">4</td>
+                    <td class="date-col">Jan 29</td>
+                    <td class="topic-col">SQL (DQL: VIEWS-INDEX-FUNCTIONS-...); Entity-Relationship (ER) Model</td>
+                    <td class="quiz-col">Quiz 1</td>
+                </tr>
+                <tr>
+                    <td class="week-col">5</td>
+                    <td class="date-col">Feb 5</td>
+                    <td class="topic-col">Entity-Relationship (ER) Mapping; Functional Dependencies and Normalization Theory</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr class="project-release">
+                    <td class="week-col">6</td>
+                    <td class="date-col">Feb 12</td>
+                    <td class="topic-col">Application Development; Project Discussion · <strong>Final Project Release</strong></td>
+                    <td class="quiz-col">Quiz 2</td>
+                </tr>
+                <tr class="winter-break">
+                    <td class="week-col">7</td>
+                    <td class="date-col">Feb 19</td>
+                    <td class="topic-col">Winter Break</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr>
+                    <td class="week-col">8</td>
+                    <td class="date-col">Feb 26</td>
+                    <td class="topic-col">Physical Storage, Data Storage Structures and Indexing; Query Processing, Query Optimization</td>
+                    <td class="quiz-col">Quiz 3</td>
+                </tr>
+                <tr>
+                    <td class="week-col">9</td>
+                    <td class="date-col">Mar 5</td>
+                    <td class="topic-col">NoSQL - MongoDB Database (Document based DB); NoSQL - Graph-Oriented Database (Directed Edge-Labelled Graph [SPARQL])</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr class="student-presentations">
+                    <td class="week-col">10</td>
+                    <td class="date-col">Mar 12</td>
+                    <td class="topic-col">NoSQL - Graph-Oriented Database (Property Graph [Neo4J-CYPHER]); NoSQL - Vector Databases for AI Applications (Milvus)</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr class="student-presentations">
+                    <td class="week-col">11</td>
+                    <td class="date-col">Mar 19</td>
+                    <td class="topic-col">NoSQL - Key-Value Stores Beyond Caching (Redis, DynamoDB); NoSQL - Time-Series Databases (InfluxDB, TimescaleDB)</td>
+                    <td class="quiz-col">Quiz 4</td>
+                </tr>
+                <tr class="student-presentations">
+                    <td class="week-col">12</td>
+                    <td class="date-col">Mar 26</td>
+                    <td class="topic-col">Databases in Software Architecture & Design; ORM, Tooling, and Developer Productivity</td>
+                    <td class="quiz-col"></td>
+                </tr>
+                <tr class="student-presentations project-due">
+                    <td class="week-col">13</td>
+                    <td class="date-col">Apr 2</td>
+                    <td class="topic-col">Performance, Scalability, and Reliability; Security, Privacy, and Responsible Data Management · <strong>Final Project Due</strong></td>
+                    <td class="quiz-col"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="meta" style="margin-top: 12px;">
+            <strong>Quiz Topics:</strong><br>
+            Quiz 1: RA, TRC, SQL basics, ER<br>
+            Quiz 2: ER Mapping, FDs, Normalization<br>
+            Quiz 3: Application Dev, Transactions, C<br>
+            Quiz 4: Internals + Core NoSQL
+        </div>
+    </section>
+
+    <section class="link-section">
+        <h2>Student Seminar Presentations</h2>
+        <p>
+            Weeks 10–13 are dedicated to student-led seminar presentations. Each topic is presented
+            by 4 students, with 17–20 minutes per presentation.
+        </p>
+        <p>
+            <a href="seminar.html">View Seminar Topics and Requirements →</a>
+        </p>
+    </section>
+
+    <section class="link-section">
+        <h2>Final Project</h2>
+        <p>
+            <a href="final-project.html">Final Project Information →</a>
+        </p>
+    </section>
+
     <footer>
-        Course seminar materials
+        Course schedule · Winter 2026
     </footer>
 
 </div>
