@@ -1,0 +1,71 @@
+EGEN5208W - Database Topics List
+Total: 8 Main Topics × 4 Subtopics = 32 Topics
+
+================================================================================
+TOPIC 1: NoSQL – Graph-Oriented Databases
+================================================================================
+Subtopic 1.1: Graph Data Models & When to Use Them
+Subtopic 1.2: Neo4j Architecture & Storage
+Subtopic 1.3: Cypher Query Language
+Subtopic 1.4: Graph Analytics & Real-World Applications
+
+================================================================================
+TOPIC 2: NoSQL – Vector Databases for AI Applications
+================================================================================
+Subtopic 2.1: Vector Databases Fundamentals
+Subtopic 2.2: Milvus Architecture
+Subtopic 2.3: Using Milvus in Applications
+Subtopic 2.4: Production Challenges & Best Practices
+
+================================================================================
+TOPIC 3: NoSQL – Key-Value Stores Beyond Caching
+================================================================================
+Subtopic 3.1: Key-Value Store Fundamentals
+Subtopic 3.2: Redis Deep Dive
+Subtopic 3.3: DynamoDB Architecture
+Subtopic 3.4: Design Patterns & Pitfalls
+
+================================================================================
+TOPIC 4: NoSQL – Time-Series Databases
+================================================================================
+Subtopic 4.1: Time-Series Data Fundamentals
+Subtopic 4.2: InfluxDB (NoSQL Approach)
+Subtopic 4.3: TimescaleDB (SQL-Based Approach)
+Subtopic 4.4: Choosing the Right Time-Series Database
+
+================================================================================
+TOPIC 5: Databases in Software Architecture & Design
+================================================================================
+Subtopic 5.1: Database Design in Microservices
+Subtopic 5.2: Distributed Transactions & Saga Pattern
+Subtopic 5.3: Event-Driven Architectures & Databases
+Subtopic 5.4: CAP Theorem & Schema Evolution
+
+================================================================================
+TOPIC 6: ORM, Tooling, and Developer Productivity
+================================================================================
+Subtopic 6.1: ORMs – Power and Pitfalls
+Subtopic 6.2: N+1 Query Problem
+Subtopic 6.3: Schema Migrations & CI/CD
+Subtopic 6.4: Database Testing & Version Control
+
+================================================================================
+TOPIC 7: Performance, Scalability, and Reliability
+================================================================================
+Subtopic 7.1: Indexing Strategies
+Subtopic 7.2: Query Performance Anti-Patterns
+Subtopic 7.3: Scalability & Resource Management
+Subtopic 7.4: Reliability & High Availability
+
+================================================================================
+TOPIC 8: Security, Privacy, and Responsible Data Management
+================================================================================
+Subtopic 8.1: SQL Injection & Secure Access
+Subtopic 8.2: Authentication & Authorization
+Subtopic 8.3: Encryption & Data Protection
+Subtopic 8.4: Data Privacy & Compliance
+
+================================================================================
+END OF LIST
+Total: 8 Main Topics, 32 Subtopics
+

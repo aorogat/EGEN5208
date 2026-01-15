@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>Problem Statement</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University
+        </div>
+    </section>
+
+    <section>
+        <h2>1. Project Objective</h2>
+        <p>
+            Design and implement a <strong>Health and Fitness Club Management System</strong> using PostgreSQL as the database backend.
+        </p>
+        <p>
+            The system models the core database functionality required to manage a small fitness club, including:
+        </p>
+        <ul>
+            <li>Members and their profiles</li>
+            <li>Trainers and their availability</li>
+            <li>Personal training sessions</li>
+            <li>Group fitness classes</li>
+            <li>Rooms and scheduling constraints</li>
+        </ul>
+        <p>
+            The goal of this project is to demonstrate sound database design, correct SQL usage, constraint enforcement, and role-based access, 
+            not to build a production-level application.
+        </p>
+        <p>
+            The system supports exactly three user roles:
+        </p>
+        <ul>
+            <li>Members</li>
+            <li>Trainers</li>
+            <li>Administrative Staff</li>
+        </ul>
+        <p>
+            Each role has clearly defined responsibilities and limited access to the system.
+        </p>
+    </section>
+
+    <section>
+        <h2>2. System Requirements by User Role</h2>
+        <p>
+            This section describes the expected system behavior. Only the operations explicitly defined later in the Functional Requirements 
+            document must be implemented.
+        </p>
+        
+        <h3>2.1 Member Requirements</h3>
+        <p>
+            Members represent clients of the fitness club.
+        </p>
+        <p>
+            Each member:
+        </p>
+        <ul>
+            <li>Registers with basic personal information, including:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Full name</li>
+                    <li>Email address (must be unique)</li>
+                    <li>Date of birth</li>
+                    <li>Gender</li>
+                    <li>Contact information</li>
+                </ul>
+            </li>
+            <li>Can update their own profile information</li>
+            <li>Can define one or more fitness goals (e.g., target weight or fitness objective)</li>
+        </ul>
+        <p>
+            Members may record health metrics such as weight or heart rate. Each metric entry:
+        </p>
+        <ul>
+            <li>Is stored with a timestamp</li>
+            <li>Is treated as a historical record</li>
+            <li>Must not overwrite previous records</li>
+        </ul>
+        <p>
+            Members interact with the scheduling system by:
+        </p>
+        <ul>
+            <li>Booking or canceling personal training sessions</li>
+            <li>Registering for group fitness classes</li>
+        </ul>
+        <p>
+            The system must enforce the following business rules:
+        </p>
+        <ul>
+            <li>A member cannot have overlapping bookings</li>
+            <li>A member cannot register for a full class</li>
+            <li>A booking cannot be confirmed if the assigned trainer or room is unavailable</li>
+        </ul>
+        <p>
+            <strong>Note:</strong> Trend analysis, charts, or advanced analytics are not required.
+        </p>
+
+        <h3>2.2 Trainer Requirements</h3>
+        <p>
+            Trainers are staff members who conduct personal training sessions and group classes.
+        </p>
+        <p>
+            Each trainer:
+        </p>
+        <ul>
+            <li>Defines their availability using time slots</li>
+            <li>Cannot define overlapping availability periods</li>
+            <li>Can view a list of:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Their upcoming personal training sessions</li>
+                    <li>Group classes they are assigned to</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Trainers have read-only access to:
+        </p>
+        <ul>
+            <li>Basic member profile information</li>
+            <li>Relevant health metrics of members assigned to them</li>
+        </ul>
+        <p>
+            Trainers:
+        </p>
+        <ul>
+            <li>Cannot modify member data</li>
+            <li>Cannot access administrative or billing information</li>
+        </ul>
+
+        <h3>2.3 Administrative Staff Requirements</h3>
+        <p>
+            Administrative staff manage the operational aspects of the club.
+        </p>
+        <p>
+            Administrators are responsible for:
+        </p>
+        <ul>
+            <li>Creating and managing group fitness classes</li>
+            <li>Assigning:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Trainers</li>
+                    <li>Rooms</li>
+                    <li>Class capacity</li>
+                </ul>
+            </li>
+            <li>Preventing scheduling conflicts involving rooms or trainers</li>
+        </ul>
+        <p>
+            Administrators may also manage equipment records at a basic level:
+        </p>
+        <ul>
+            <li>Equipment name</li>
+            <li>Status (e.g., operational, under maintenance)</li>
+        </ul>
+        <p>
+            Billing and payments are simulated only:
+        </p>
+        <ul>
+            <li>No real payment gateway is required</li>
+            <li>The system must store:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Amount</li>
+                    <li>Payment status</li>
+                    <li>Date</li>
+                    <li>Payment method (text field)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. System-Wide Requirements</h2>
+        <p>
+            The system must:
+        </p>
+        <ul>
+            <li>Enforce role-based access control</li>
+            <li>Prevent invalid operations through:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Database constraints</li>
+                    <li>Triggers</li>
+                    <li>Application-level validation</li>
+                </ul>
+            </li>
+            <li>Preserve data integrity at all times</li>
+        </ul>
+        <p>
+            The database design must be:
+        </p>
+        <ul>
+            <li>Normalized to Third Normal Form (3NF)</li>
+            <li>Free of redundant or derived attributes unless justified</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Design Decisions</h2>
+        <p>
+            You are expected to make reasonable and justified design decisions, including:
+        </p>
+        <ul>
+            <li>Entity attributes</li>
+            <li>Relationships</li>
+            <li>Constraint definitions</li>
+            <li>Trigger logic</li>
+            <li>Error-handling behavior</li>
+        </ul>
+        <p>
+            All design decisions must be:
+        </p>
+        <ul>
+            <li>Clearly reflected in the ER diagram</li>
+            <li>Consistent with the database schema</li>
+            <li>Justified in the accompanying documentation</li>
+        </ul>
+        <p>
+            You will not be penalized for reasonable design choices if they are consistent, documented, and correctly implemented.
+        </p>
+    </section>
+
+    <footer>
+        <a href="functional-requirements.html" style="color: #1a5490; text-decoration: none;">Next: Functional Requirements →</a>
+    </footer>
+
+</div>
+</body>
+</html>
+

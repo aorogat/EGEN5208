@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - Health and Fitness Club Management System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        .requirements-table .req-col {
+            width: 200px;
+        }
+
+        .deliverables-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: #e7f3ff;
+            border: 2px solid #1a5490;
+            border-radius: 4px;
+        }
+
+        .deliverables-box h2 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="../index.html" class="back-link">← Back to Course Schedule</a>
+
+    <header>
+        <h1>Final Project: Health and Fitness Club Management System</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University<br>
+            <strong>Project Type:</strong> Individual Project (Solo)
+        </div>
+    </section>
+
+    <section>
+        <h2>Project Overview</h2>
+        <p>
+            Design and implement a <strong>Health and Fitness Club Management System</strong> using PostgreSQL as the backend database.
+        </p>
+        <p>
+            The system models the core operations of a small fitness club and supports exactly three user roles:
+        </p>
+        <ul>
+            <li><strong>Members</strong> – clients of the fitness club</li>
+            <li><strong>Trainers</strong> – staff who provide training services</li>
+            <li><strong>Administrative Staff</strong> – staff who manage memberships and operations</li>
+        </ul>
+        <p>
+            The focus of this project is database design, normalization, and SQL correctness, not advanced UI or full-stack complexity.
+        </p>
+    </section>
+
+    <section>
+        <h2>Important Clarifications</h2>
+        <p>
+            This is an <strong>individual (solo) project</strong>. Each student designs and implements their own database schema and application. 
+            The project must be self-contained and runnable by the instructor.
+        </p>
+    </section>
+
+    <section>
+        <h2>Project Scope</h2>
+        <p>
+            To avoid over- or under-engineering, the system scope is intentionally limited:
+        </p>
+        <ul>
+            <li>The system manages memberships, trainers, sessions/classes, and administrative actions</li>
+            <li>Payment gateways, mobile apps, external APIs, and real authentication systems are out of scope</li>
+            <li>A simple login mechanism (username/password stored in the database) is sufficient</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Project Requirements Summary</h2>
+        <table class="requirements-table">
+            <thead>
+                <tr>
+                    <th class="req-col">Requirement</th>
+                    <th>Exact Expectation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Entities in ER Model</strong></td>
+                    <td>Minimum 6 entities (must be meaningful, not artificial)</td>
+                </tr>
+                <tr>
+                    <td><strong>Relationships in ER Model</strong></td>
+                    <td>Minimum 5 relationships, including at least one many-to-many</td>
+                </tr>
+                <tr>
+                    <td><strong>Application Operations</strong></td>
+                    <td>Exactly 8 total operations</td>
+                </tr>
+                <tr>
+                    <td><strong>Role Coverage</strong></td>
+                    <td>All 3 roles must be represented</td>
+                </tr>
+                <tr>
+                    <td><strong>Operation Distribution</strong></td>
+                    <td>4 Member + 2 Trainer + 2 Admin</td>
+                </tr>
+                <tr>
+                    <td><strong>Database Features</strong></td>
+                    <td>At least 1 View, 1 Trigger, 1 Index (excluding PK indexes)</td>
+                </tr>
+                <tr>
+                    <td><strong>Database System</strong></td>
+                    <td>PostgreSQL (mandatory)</td>
+                </tr>
+                <tr>
+                    <td><strong>Normalization</strong></td>
+                    <td>Schema must be in 3NF or higher</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operations Constraint</h2>
+        <p>
+            To ensure fairness and comparable workload:
+        </p>
+        <ul>
+            <li>You must implement <strong>exactly 8 operations</strong></li>
+            <li>Each operation must:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Perform at least one meaningful SQL action</li>
+                    <li>Interact with real database tables</li>
+                    <li>Be executable independently</li>
+                </ul>
+            </li>
+            <li>Adding extra operations will not increase marks.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Database Features</h2>
+        <p>
+            <strong>View:</strong> Must combine data from at least two tables and support a realistic query use case.
+        </p>
+        <p>
+            <strong>Trigger:</strong> Must enforce a business rule (e.g., availability, capacity, automatic status update).
+        </p>
+        <p>
+            <strong>Index:</strong> Must improve performance for a realistic query (not just a primary key).
+        </p>
+    </section>
+
+    <section>
+        <h2>Technology Flexibility</h2>
+        <p>
+            You may use any programming language or framework. You may use raw SQL or an ORM. The grading emphasis is on:
+        </p>
+        <ul>
+            <li>Correct schema design</li>
+            <li>SQL quality</li>
+            <li>Constraint enforcement</li>
+            <li>Data integrity</li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="deliverables-box">
+            <h2>Deliverables Overview</h2>
+            <p>
+                Full details are provided in the linked documents below. At a minimum, students will submit:
+            </p>
+            <ul>
+                <li>Database design artifacts</li>
+                <li>SQL or ORM implementation</li>
+                <li>Working application demonstrating all operations</li>
+                <li>Documentation and demo evidence</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Documentation Navigation</h2>
+        <p>
+            Each section below must be read carefully before implementation:
+        </p>
+        <ol>
+            <li><a href="problem-statement.html">Problem Statement</a> – Business context and system boundaries</li>
+            <li><a href="functional-requirements.html">Functional Requirements</a> – Exact definition of the 8 required operations</li>
+            <li><a href="er-model-requirements.html">ER Model Requirements</a> – Design rules and constraints</li>
+            <li><a href="database-schema.html">Database Schema & SQL Requirements</a> – Tables, keys, constraints</li>
+            <li><a href="implementation-requirements.html">Implementation Requirements</a> – Application and coding rules</li>
+            <li><a href="submission-requirements.html">Submission Requirements</a> – What to submit and how</li>
+            <li><a href="grading-criteria.html">Grading Criteria</a> – How marks are allocated</li>
+        </ol>
+    </section>
+
+    <footer>
+        Course materials · Winter 2026
+    </footer>
+
+</div>
+</body>
+</html>
+
+

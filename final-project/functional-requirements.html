@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Requirements - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        .requirements-table .req-col {
+            width: 200px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .requirements-table {
+                font-size: 0.8em;
+            }
+
+            .requirements-table th,
+            .requirements-table td {
+                padding: 6px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>Functional Requirements</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University
+        </div>
+    </section>
+
+    <section>
+        <h2>Required Operations</h2>
+        <p>
+            You must implement exactly eight (8) application operations.
+        </p>
+        <p>
+            Each operation:
+        </p>
+        <ul>
+            <li>Must execute one or more SQL statements</li>
+            <li>Must interact with actual database tables</li>
+            <li>Must handle both success and failure cases</li>
+            <li>Must be executable independently of other operations</li>
+        </ul>
+        <p>
+            <strong>Implementing more than 8 operations will not earn additional marks.</strong>
+        </p>
+        <table class="requirements-table">
+            <thead>
+                <tr>
+                    <th class="req-col">Role</th>
+                    <th>Operations</th>
+                    <th style="width: 80px;">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Member</strong></td>
+                    <td>User Registration, Profile Management, Health History, Dashboard</td>
+                    <td style="text-align: center;">4</td>
+                </tr>
+                <tr>
+                    <td><strong>Trainer</strong></td>
+                    <td>Set Availability, Schedule View</td>
+                    <td style="text-align: center;">2</td>
+                </tr>
+                <tr>
+                    <td><strong>Administrative Staff</strong></td>
+                    <td>Room Booking, Equipment Maintenance</td>
+                    <td style="text-align: center;">2</td>
+                </tr>
+                <tr style="border-top: 2px solid #222;">
+                    <td><strong>Total</strong></td>
+                    <td></td>
+                    <td style="text-align: center;"><strong>8</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Member Functions (4 Operations)</h2>
+        
+        <h3>1. User Registration</h3>
+        <p>
+            Create a new member account.
+        </p>
+        <p>
+            The system must:
+        </p>
+        <ul>
+            <li>Accept the following inputs:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Full name</li>
+                    <li>Email address (must be unique)</li>
+                    <li>Date of birth</li>
+                    <li>Gender</li>
+                    <li>Phone number</li>
+                </ul>
+            </li>
+            <li>Automatically store the registration timestamp</li>
+            <li>Reject duplicate email registrations with a clear error message</li>
+        </ul>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>INSERT</code> to create the member record
+        </p>
+
+        <h3>2. Profile Management</h3>
+        <p>
+            Allow a logged-in member to manage their own profile and health data.
+        </p>
+        <p>
+            The system must allow:
+        </p>
+        <ul>
+            <li>Updating basic profile information (e.g., name, phone)</li>
+            <li>Creating or updating fitness goals (e.g., target weight)</li>
+            <li>Inserting new health metric records</li>
+        </ul>
+        <p>
+            Health metrics:
+        </p>
+        <ul>
+            <li>Must be stored as append-only records</li>
+            <li>Must include:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Metric type (e.g., weight, heart rate)</li>
+                    <li>Value</li>
+                    <li>Timestamp</li>
+                </ul>
+            </li>
+            <li>Existing health records must never be overwritten</li>
+        </ul>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>UPDATE</code> for profile data, <code>INSERT</code> for goals, <code>INSERT</code> for health metrics
+        </p>
+
+        <h3>3. Health History</h3>
+        <p>
+            Display the complete health metric history for the logged-in member.
+        </p>
+        <p>
+            The system must:
+        </p>
+        <ul>
+            <li>Retrieve all health metric records for the member</li>
+            <li>Display:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Metric type</li>
+                    <li>Value</li>
+                    <li>Timestamp</li>
+                </ul>
+            </li>
+            <li>Sort results consistently by timestamp</li>
+            <li>Display a message if no records exist</li>
+        </ul>
+        <p>
+            No modification operations are allowed here.
+        </p>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>SELECT</code>, <code>WHERE</code> (filter by member), <code>ORDER BY</code>
+        </p>
+
+        <h3>4. Dashboard</h3>
+        <p>
+            Display a summary view for the logged-in member.
+        </p>
+        <p>
+            The dashboard must show:
+        </p>
+        <ul>
+            <li>The most recent value for each health metric type</li>
+            <li>All active fitness goals</li>
+            <li>The total number of group classes attended</li>
+            <li>A list of upcoming personal training sessions, including:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Date</li>
+                    <li>Start time</li>
+                    <li>End time</li>
+                    <li>Trainer name</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Charts, trends, predictions, or visual analytics are not required.
+        </p>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>SELECT</code> with <code>JOIN</code>s, <code>COUNT</code>, subqueries or <code>ORDER BY</code> … <code>LIMIT 1</code>
+        </p>
+    </section>
+
+    <section>
+        <h2>Trainer Functions (2 Operations)</h2>
+        
+        <h3>5. Set Availability</h3>
+        <p>
+            Allow trainers to define when they are available.
+        </p>
+        <p>
+            Availability:
+        </p>
+        <ul>
+            <li>Is represented as individual time slots</li>
+            <li>Each slot includes:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Date</li>
+                    <li>Start time</li>
+                    <li>End time</li>
+                </ul>
+            </li>
+            <li>Recurring availability is not required</li>
+        </ul>
+        <p>
+            The system must:
+        </p>
+        <ul>
+            <li>Prevent overlapping availability slots for the same trainer</li>
+            <li>Validate that end time is after start time</li>
+            <li>Allow updating or deleting existing slots</li>
+        </ul>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>SELECT</code> to detect overlap, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>
+        </p>
+
+        <h3>6. Schedule View</h3>
+        <p>
+            Display the trainer's upcoming assignments.
+        </p>
+        <p>
+            The system must show:
+        </p>
+        <ul>
+            <li>Personal training sessions:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Date, time, member name, room</li>
+                </ul>
+            </li>
+            <li>Group fitness classes:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>Date, time, class name, room</li>
+                </ul>
+            </li>
+            <li>Only future sessions</li>
+            <li>Results sorted by date and start time</li>
+        </ul>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>SELECT</code>, <code>JOIN</code>, <code>WHERE</code>, <code>ORDER BY</code>
+        </p>
+    </section>
+
+    <section>
+        <h2>Administrative Staff Functions (2 Operations)</h2>
+        
+        <h3>7. Room Booking</h3>
+        <p>
+            Allow administrators to assign rooms to sessions or classes.
+        </p>
+        <p>
+            The system must:
+        </p>
+        <ul>
+            <li>Prevent assigning the same room to overlapping time periods</li>
+            <li>Allow modifying an existing room assignment</li>
+            <li>Reject conflicts with a clear error message</li>
+        </ul>
+        <p>
+            Room availability display:
+        </p>
+        <ul>
+            <li>May be a simple list of rooms not already booked in a given time window</li>
+        </ul>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>SELECT</code> to detect conflicts, <code>UPDATE</code> to assign or change rooms
+        </p>
+
+        <h3>8. Equipment Maintenance</h3>
+        <p>
+            Allow administrators to manage equipment records.
+        </p>
+        <p>
+            The system must support:
+        </p>
+        <ul>
+            <li>Logging a maintenance issue</li>
+            <li>Updating equipment status:
+                <ul style="margin: 4px 0 0 20px;">
+                    <li>operational</li>
+                    <li>under repair</li>
+                    <li>out of service</li>
+                </ul>
+            </li>
+            <li>Viewing all equipment</li>
+            <li>Filtering equipment requiring maintenance</li>
+        </ul>
+        <p>
+            Equipment must be associated with a room or location.
+        </p>
+        <p>
+            <strong>Required SQL behavior:</strong> <code>INSERT</code>, <code>UPDATE</code>, <code>SELECT</code> with <code>WHERE</code>
+        </p>
+    </section>
+
+    <section>
+        <h2>Implementation Notes</h2>
+        <p>
+            Each operation must be demonstrated with:
+        </p>
+        <ul>
+            <li>One successful execution</li>
+            <li>One failure case</li>
+        </ul>
+        <p>
+            All validation must be enforced through:
+        </p>
+        <ul>
+            <li>SQL constraints, and/or</li>
+            <li>Triggers, and/or</li>
+            <li>Application-level checks</li>
+        </ul>
+        <p>
+            No hard-coded data is allowed. Errors must be handled gracefully.
+        </p>
+    </section>
+
+    <footer>
+        Course materials · Winter 2026
+    </footer>
+
+</div>
+</body>
+</html>

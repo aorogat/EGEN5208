@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading Criteria - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 4px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        .requirements-table .req-col {
+            width: 200px;
+        }
+
+        .requirements-table .weight-col {
+            width: 80px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .requirements-table {
+                font-size: 0.8em;
+            }
+
+            .requirements-table th,
+            .requirements-table td {
+                padding: 6px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>Grading Criteria</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University
+        </div>
+    </section>
+
+    <section>
+        <h2>Overview</h2>
+        <p>
+            Total: 100 marks across seven categories. Grading is primarily based on your video demonstration.
+        </p>
+    </section>
+
+    <section>
+        <h2>Grading Breakdown</h2>
+        <table class="requirements-table">
+            <thead>
+                <tr>
+                    <th class="req-col">Category</th>
+                    <th class="weight-col">Marks</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Conceptual Database Design (ER Model)</strong></td>
+                    <td class="weight-col">20</td>
+                    <td>Clear ER diagram with entities, attributes, and relationships; correctly reflects real-world use cases and functions; appropriate use of cardinality and participation constraints; avoids redundancy.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Mapping ER to Relational Schema</strong></td>
+                    <td class="weight-col">20</td>
+                    <td>Accurate and complete conversion of ER model to relational schemas; all keys and constraints properly defined; handles weak entities and relationships well.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Schema Quality and Normalization</strong></td>
+                    <td class="weight-col">10</td>
+                    <td>Tables are normalized (at least to 3NF); no unnecessary redundancy.</td>
+                </tr>
+                <tr>
+                    <td><strong>4. SQL Code (DDL, DML, Queries)</strong></td>
+                    <td class="weight-col">20</td>
+                    <td>High-quality DDL.sql and DML.sql (or equivalent ORM code); includes constraints, sample data, and test cases; use of advanced SQL features (e.g., views, triggers, joins).</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Application Functionality</strong></td>
+                    <td class="weight-col">20</td>
+                    <td>Number and correctness of implemented functions based on requirements; includes validation, constraints, and handles edge cases; proper user-role separation.</td>
+                </tr>
+                <tr>
+                    <td><strong>6. User Interface / CLI Flow</strong></td>
+                    <td class="weight-col">5</td>
+                    <td>Interface is functional, clear, and user-friendly; commands or menus are intuitive and role-specific; no major usability issues.</td>
+                </tr>
+                <tr>
+                    <td><strong>7. Demo Video Presentation</strong></td>
+                    <td class="weight-col">5</td>
+                    <td>Complete and well-paced walkthrough; demonstrates key components (ERD, mapping, code, functionalities); SQL or ORM code shown clearly.</td>
+                </tr>
+                <tr style="border-top: 2px solid #222;">
+                    <td><strong>Total</strong></td>
+                    <td class="weight-col"><strong>100</strong></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Interpretation of Grading Categories</h2>
+        <p>
+            The following provides guidance on how each grading category is assessed:
+        </p>
+        <table class="requirements-table">
+            <thead>
+                <tr>
+                    <th class="req-col">Criterion</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Conceptual Database Design</strong></td>
+                    <td>ER diagram is clear, professional, and well-organized. All required entities and relationships are present and correctly modeled with appropriate cardinality. Attributes are appropriate and complete. ER model fully supports all implemented functions. No redundancy or design flaws.</td>
+                </tr>
+                <tr>
+                    <td><strong>Relational Schema Mapping</strong></td>
+                    <td>Accurate conversion of all entities to tables. All relationships properly represented (foreign keys, junction tables where needed). Primary keys correctly identified. Foreign keys properly defined with appropriate constraints. Weak entities and special relationships handled correctly.</td>
+                </tr>
+                <tr>
+                    <td><strong>Normalization</strong></td>
+                    <td>All tables normalized to at least 3NF. No unnecessary redundancy. Proper use of normalization principles. Design decisions are justified and appropriate.</td>
+                </tr>
+                <tr>
+                    <td><strong>SQL Implementation</strong></td>
+                    <td>High-quality, complete DDL.sql with all constraints (primary keys, foreign keys, NOT NULL, UNIQUE, CHECK). Comprehensive DML.sql with realistic sample data sufficient to test all operations. Appropriate use of views, triggers, and indexes to support system functionality. Well-written SQL queries in application code with proper use of joins, subqueries, and aggregations.</td>
+                </tr>
+                <tr>
+                    <td><strong>Functionality</strong></td>
+                    <td>All required functions implemented and working correctly. Proper validation and error handling for all functions. Both success and failure cases demonstrated. Business rules properly enforced. Proper role-based access control implemented.</td>
+                </tr>
+                <tr>
+                    <td><strong>User Interface</strong></td>
+                    <td>Interface is clear, intuitive, and user-friendly. Role-specific menus or commands. Easy to navigate and use. Even simple CLI interfaces are acceptable if functional and clear.</td>
+                </tr>
+                <tr>
+                    <td><strong>Video Presentation</strong></td>
+                    <td>Complete walkthrough of all required components (ER model, schema mapping, database definition, all required functions, code structure, user flow). Clearly demonstrates all required system components and functionality. All functions demonstrated with both success and failure cases. SQL or ORM code clearly shown.</td>
+                </tr>
+                <tr>
+                    <td><strong>Completeness</strong></td>
+                    <td>All required components present: video, report, source code, SQL files (or ORM code), ER diagram, README. All required functions implemented. All required database features included. Sample data supports testing all functions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Common Mistakes</h2>
+        <p>
+            Common mistakes that reduce grades include: hard-coded data instead of database queries, missing validation for business rules, 
+            ER model that doesn't support all 8 functions, poor normalization (redundancy, incorrect design), missing required SQL features 
+            (views, triggers, indexes), incomplete video demonstration, no error handling for failure cases, and poor documentation (README, report).
+        </p>
+    </section>
+
+    <section>
+        <h2>Additional Notes</h2>
+        <p>
+            Video demonstration is the primary basis for grading. Demonstrate all 8 functions with success and failure cases. Code quality and 
+            organization affect marks. ORM usage must be clearly demonstrated if used.
+        </p>
+    </section>
+
+    <footer>
+        Course materials · Winter 2026
+    </footer>
+
+</div>
+</body>
+</html>

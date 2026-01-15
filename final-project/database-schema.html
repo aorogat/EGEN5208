@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Schema & SQL Requirements - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 24px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .requirements-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: #e7f3ff;
+            border-left: 3px solid #1a5490;
+            border-radius: 2px;
+        }
+
+        .requirements-box h3 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+
+        .deliverables-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: #e7f3ff;
+            border: 2px solid #1a5490;
+            border-radius: 4px;
+        }
+
+        .deliverables-box h2 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+
+        .important {
+            background: #fff3cd;
+            padding: 16px;
+            border-left: 3px solid #ffc107;
+            border-radius: 2px;
+            margin-top: 16px;
+        }
+
+        .important strong {
+            color: #856404;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            margin: 12px 0;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.9em;
+        }
+
+        table th, table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        table th {
+            font-weight: 600;
+            background: #f8f9fa;
+            color: #222;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>Database Schema & SQL Requirements</h1>
+        <div class="subtitle">
+            Mapping ER Model to Relational Schema and SQL Implementation
+        </div>
+    </header>
+
+    <section>
+        <h2>Individual Project Requirements (Solo Student)</h2>
+        <p>
+            Each student must design and implement a complete relational database using PostgreSQL. The submission must include a database schema 
+            definition file (DDL.sql), a data population file (DML.sql), at least one SQL view, at least one trigger, and at least one 
+            non-primary-key index. The final database design must satisfy Third Normal Form (3NF).
+        </p>
+        <p>
+            All required components must be present. Missing any component will result in loss of marks.
+        </p>
+    </section>
+
+    <section>
+        <div class="deliverables-box">
+            <h2>Required Deliverables</h2>
+            <p>
+                For the database schema component, the following deliverables are required.
+            </p>
+        <p>
+            <strong>Visual Database Schema Diagram:</strong> You must submit a drawn relational schema diagram representing the final database design. 
+            The diagram must display all tables and their columns. Primary keys and foreign keys must be clearly identified. Foreign key relationships 
+            must be visually represented using arrows or connectors. The diagram must be readable, unambiguous, and reflect the database structure used 
+            by the application.
+        </p>
+        <p>
+            <strong>DDL.sql File:</strong> You must submit a file named DDL.sql. This file must implement the database schema shown in the visual schema 
+            diagram. When executed on a fresh PostgreSQL database, the file must create the complete database structure required by the system, including 
+            tables, columns, keys, constraints, views, triggers, and indexes.
+        </p>
+        <p>
+            <strong>DML.sql File:</strong> You must submit a file named DML.sql. This file must populate the database with sample data sufficient to 
+            test all required application operations.
+        </p>
+        <p>
+            <strong>Normalization Evidence:</strong> You must provide evidence that the final database schema satisfies Third Normal Form (3NF). This 
+            evidence may be presented as a brief written explanation or annotated diagrams. The purpose is to justify the correctness of the final schema, 
+            not to document a normalization procedure.
+        </p>
+        <p>
+            The visual schema diagram and DDL.sql file must describe the same database structure. Any inconsistency between them will be treated as an error.
+        </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. ER Model and Database Schema Consistency</h2>
+        <p>
+            The database schema must be consistent with the ER model submitted for this project. The ER model and the database schema represent the same 
+            system design at different levels of abstraction. Any mismatch between the ER model and the implemented schema will be treated as a design error.
+        </p>
+        <p>
+            All data required by the application must be stored in the database. Required data must not be hard-coded in the application.
+        </p>
+    </section>
+
+    <section>
+        <h2>2. DDL (Data Definition Language) Requirements</h2>
+        <p>
+            You must submit a file named <code>DDL.sql</code> that defines the complete database structure.
+        </p>
+        <p>
+            When executed on an empty PostgreSQL database, DDL.sql must create the entire schema required by the system, including tables, constraints, 
+            views, triggers, and indexes. The file must execute without errors and must not require manual modification.
+        </p>
+
+        <h3>2.1 Schema Definition Expectations</h3>
+        <p>
+            The schema must include appropriate tables and attributes to support the system requirements. Entity identity, data validity, and referential 
+            integrity must be enforced at the database level. Attribute data types must be suitable for the stored data.
+        </p>
+        <p>
+            Designs that rely on application logic to enforce data correctness instead of database constraints are not acceptable.
+        </p>
+
+        <h3>2.2 Execution Requirement</h3>
+        <p>
+            The DDL.sql file must be self-contained. Running the file on a clean PostgreSQL database must fully initialize the schema.
+        </p>
+    </section>
+
+    <section>
+        <h2>3. DML (Data Manipulation Language) Requirements</h2>
+        <p>
+            You must submit a file named <code>DML.sql</code> containing sample data.
+        </p>
+        <p>
+            The purpose of this file is to populate the database with realistic data that allows the required application operations to be demonstrated.
+        </p>
+
+        <h3>3.1 Data Population Expectations</h3>
+        <p>
+            The sample data must cover all tables and respect all defined constraints. The dataset must be sufficient to demonstrate normal system 
+            behavior as well as constraint enforcement.
+        </p>
+
+        <h3>3.2 Execution Requirement</h3>
+        <p>
+            The DML.sql file must execute successfully immediately after DDL.sql on a clean database.
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Advanced SQL Features</h2>
+        <p>
+            The database must demonstrate the use of SQL features beyond basic table creation.
+        </p>
+
+        <h3>4.1 Views</h3>
+        <p>
+            At least one SQL view must be defined. The view must provide information that is meaningful for the application and must not simply 
+            replicate a single table. The view must be used during application execution.
+        </p>
+
+        <h3>4.2 Triggers</h3>
+        <p>
+            At least one trigger must be implemented. The trigger must automatically enforce a data consistency or correctness rule in response to 
+            a database modification.
+        </p>
+
+        <h3>4.3 Indexes</h3>
+        <p>
+            At least one non-primary-key index must be defined. The index must be relevant to application queries and improve performance for at 
+            least one operation.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Normalization Requirements</h2>
+        <p>
+            The final database schema must satisfy Third Normal Form (3NF). The schema must avoid unnecessary redundancy and unintended dependencies 
+            among attributes.
+        </p>
+        <p>
+            Schemas that introduce avoidable redundancy, store derived values, or combine unrelated concepts in the same table will be penalized.
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Constraints and Data Integrity</h2>
+        <p>
+            Data integrity must be enforced at the database level. Appropriate constraints must be used to ensure correctness of stored data. Business 
+            rules that affect data validity must not rely solely on application code.
+        </p>
+    </section>
+
+    <section>
+        <h2>Important Notes</h2>
+        <p>
+            Both DDL.sql and DML.sql must be executable on a fresh PostgreSQL database. SQL must be clearly written and readable. All required 
+            database features must be actively used by the application.
+        </p>
+    </section>
+
+    <footer>
+        <a href="implementation-requirements.html" style="color: #1a5490; text-decoration: none;">Next: Implementation Requirements →</a>
+    </footer>
+
+</div>
+</body>
+</html>
+

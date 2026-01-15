@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Requirements - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 24px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .requirements-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: #e7f3ff;
+            border-left: 3px solid #1a5490;
+            border-radius: 2px;
+        }
+
+        .requirements-box h3 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+
+        .important {
+            background: #fff3cd;
+            padding: 16px;
+            border-left: 3px solid #ffc107;
+            border-radius: 2px;
+            margin-top: 16px;
+        }
+
+        .important strong {
+            color: #856404;
+        }
+
+        .bonus-box {
+            background: #d4edda;
+            padding: 16px;
+            border-left: 3px solid #28a745;
+            border-radius: 2px;
+            margin-top: 16px;
+        }
+
+        .bonus-box h3 {
+            margin-top: 0;
+            color: #155724;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            margin: 12px 0;
+            white-space: pre-wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>Implementation Requirements</h1>
+        <div class="subtitle">
+            Application Implementation Specifications
+        </div>
+    </header>
+
+    <section>
+        <p>
+            This section specifies the requirements for the application implementation. The focus of evaluation is correctness, completeness, and alignment with the database design and functional requirements. Implementation choices are left to the student.
+        </p>
+    </section>
+
+    <section>
+        <h2>1. Programming Language and Technology</h2>
+        <p>
+            You may use any programming language or framework capable of connecting to a PostgreSQL database.
+        </p>
+        <p>
+            The application must use PostgreSQL as the database system. All required data must be stored in and retrieved from the database.
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Application Structure</h2>
+        <p>
+            The application must be logically organized and maintainable. Source code must be readable and include comments where necessary to explain non-trivial logic.
+        </p>
+        <p>
+            A README file must be provided explaining how to configure and run the application.
+        </p>
+    </section>
+
+    <section>
+        <h2>3. User Interface</h2>
+        <p>
+            The application must provide a functional interface that allows users to execute all eight required operations.
+        </p>
+        <p>
+            The interface may be command-line, web-based, or desktop-based. Visual appearance is not graded. The interface must clearly demonstrate correct interaction with the database.
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Role-Based Access Control</h2>
+        <p>
+            The application must enforce three distinct user roles: member, trainer, and administrative staff.
+        </p>
+        <p>
+            Each role must only be able to access operations relevant to that role. Role restrictions must be enforced by the application logic.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Function Implementation Requirements</h2>
+        <p>
+            Each of the eight required operations must be implemented.
+        </p>
+        <p>
+            Each operation must execute independently, interact with the database using SQL, use data stored in the database (no hard-coded data), perform validation, and handle error cases gracefully.
+        </p>
+        <p>
+            The implementation must clearly demonstrate correct system behavior under both valid and invalid inputs.
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Database Interaction</h2>
+        <p>
+            All database interaction must be performed using SQL queries executed against PostgreSQL.
+        </p>
+        <p>
+            Connection failures and database errors must be handled gracefully by the application.
+        </p>
+    </section>
+
+    <section>
+        <h2>7. Code Organization and Documentation</h2>
+        <p>
+            Project files must be organized logically. The ER diagram and schema documentation must be included in the submission.
+        </p>
+        <p>
+            A README file must describe how to set up the database, how to run the application, and any assumptions made.
+        </p>
+    </section>
+
+    <section>
+        <div class="bonus-box">
+            <h3>Optional: ORM Usage (No Impact on Core Requirements)</h3>
+            <p>
+                Students may choose to use an Object-Relational Mapping (ORM) framework.
+            </p>
+            <p>
+                Using an ORM does not replace or remove any required database deliverables. All required schema artifacts (visual schema, DDL.sql, DML.sql) must still be submitted and must match the implemented database structure.
+            </p>
+            <p>
+                ORM usage is evaluated only as an implementation choice and does not affect grading unless explicitly stated elsewhere.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="important">
+            <p>
+                <strong>Important Notes:</strong> All required operations must be implemented and demonstrable. The application must rely on the database for all persistent data. Missing or incomplete functionality will result in loss of marks.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <a href="submission-requirements.html" style="color: #1a5490; text-decoration: none;">Next: Submission Requirements →</a>
+    </footer>
+
+</div>
+</body>
+</html>
+

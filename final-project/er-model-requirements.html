@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Model Requirements - Final Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #222;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #1a5490;
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #222;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        section {
+            margin-top: 24px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 16px 0 6px 0;
+            color: #222;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 24px;
+            color: #333;
+        }
+
+        li {
+            margin: 4px 0;
+            font-size: 0.95em;
+        }
+
+        .meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            font-weight: 600;
+            color: #222;
+            background: #f8f9fa;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.9em;
+        }
+
+        table th, table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        table th {
+            font-weight: 600;
+            background: #f8f9fa;
+            color: #222;
+        }
+
+        .deliverables-box {
+            margin-top: 16px;
+            padding: 16px;
+            background: #e7f3ff;
+            border: 2px solid #1a5490;
+            border-radius: 4px;
+        }
+
+        .deliverables-box h2 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+
+        footer {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Project Home</a>
+
+    <header>
+        <h1>ER Model Requirements</h1>
+        <div class="subtitle">
+            EGEN5208W Databases for Soft Engineers
+        </div>
+    </header>
+
+    <section>
+        <div class="meta" style="margin-top: 0;">
+            <strong>Course:</strong> EGEN5208W Databases for Soft Engineers<br>
+            <strong>Instructor:</strong> Abdelghny Orogat<br>
+            <strong>Department:</strong> Department of Systems and Computer Engineering<br>
+            <strong>University:</strong> Carleton University
+        </div>
+    </section>
+
+    <section>
+        <h2>Individual Project Requirements</h2>
+        <p>
+            Your ER model must satisfy the following requirements. The ER model is evaluated as a conceptual design artifact, not as an implementation.
+        </p>
+        <p>
+            The ER model must include at least six entities and at least five relationships. All entities and relationships included in the diagram must 
+            be necessary to support the required application functionality. Adding additional entities or relationships beyond what is required does not 
+            increase marks.
+        </p>
+        <p>
+            The ER model must be consistent with the functional requirements, the database schema, and the implemented SQL. Inconsistencies between these 
+            artifacts will be treated as design errors.
+        </p>
+    </section>
+
+    <section>
+        <div class="deliverables-box">
+            <h2>Required Deliverable</h2>
+            <p>
+                You must submit one ER diagram drawn using either Chen notation or a UML-like notation. The chosen notation must be used consistently 
+                throughout the diagram.
+            </p>
+            <p>
+                The ER diagram must be clear, professional, and readable. It must show the complete conceptual structure of the system as described by 
+                the project requirements.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. Core Principle</h2>
+        <p>
+            The ER model defines the conceptual structure of the system's data.
+        </p>
+        <p>
+            The ER model must be sufficient to explain the data requirements of the system. Any functionality implemented in the application or database 
+            must be representable using the ER model. If required data or relationships are not captured in the ER model, the design will be considered 
+            incomplete.
+        </p>
+    </section>
+
+    <section>
+        <h2>2. ER Model Content Requirements</h2>
+        
+        <h3>2.1 Entities</h3>
+        <p>
+            The ER model must include at least six entities. Each entity must represent a meaningful real-world concept relevant to the system.
+        </p>
+        <p>
+            Entities must have clearly identified primary keys. Attributes included in an entity must describe that entity only. Artificial or placeholder 
+            entities created solely to increase the entity count are not acceptable.
+        </p>
+
+        <h3>2.2 Attributes</h3>
+        <p>
+            All relevant attributes must be shown in the ER diagram. Primary keys must be clearly indicated. Attribute naming should be clear and meaningful. 
+            Derived or computed attributes should not be included unless their presence is explicitly justified.
+        </p>
+
+        <h3>2.3 Relationships</h3>
+        <p>
+            The ER model must include at least five relationships. Relationships must be clearly named and must reflect meaningful associations required by 
+            the system. Each relationship must indicate cardinality. Relationships that are not required to support the system's functionality should not 
+            be included.
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Alignment with Functional Requirements</h2>
+        <p>
+            The ER model must support all eight required application operations.
+        </p>
+        <p>
+            It must be possible to explain, using the ER model, how the data required for each operation is represented. If an operation requires data that 
+            is not captured in the ER model, the ER model is considered incomplete.
+        </p>
+    </section>
+
+    <section>
+        <h2>4. ER Diagram Format and Notation</h2>
+        <p>
+            The ER diagram must be presented in a clear and professional format.
+        </p>
+        <p>
+            It must include: all entities, all relevant attributes, all relationships, and cardinality information for relationships.
+        </p>
+        <p>
+            The diagram must use either Chen notation or UML-like notation. Mixing notations is not permitted.
+        </p>
+        <p>
+            Any standard diagramming tool may be used. Hand-drawn or unclear diagrams will not be accepted.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. General Design Expectations</h2>
+        <p>
+            The ER model must be internally consistent and conceptually sound. It must be completed before database schema design or application 
+            implementation. The ER model must describe the system at a conceptual level and should not include implementation-specific details.
+        </p>
+    </section>
+
+
+    <footer>
+        <a href="database-schema.html" style="color: #1a5490; text-decoration: none;">Next: Database Schema & SQL Requirements →</a>
+    </footer>
+
+</div>
+</body>
+</html>
+
+
+
